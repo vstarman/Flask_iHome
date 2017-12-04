@@ -1,8 +1,11 @@
 # -*- coding:utf-8 -*-
-
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
 import redis
+from flask import Flask, session
+from flask_sqlalchemy import SQLAlchemy
+from flask_session import Session
+from flask_wtf.csrf import CSRFProtect
+from flask_script import Manager
+from flask_migrate import Migrate, MigrateCommand
 
 
 class Config(object):
@@ -13,8 +16,10 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = 'mysql://root:mysql@localhost:3306/Flask_iHome'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     # redis配饰
-    REDIS_HOST = '127.0.0.1'
+    REDIS_HOST = '192.168.23.150'
     REDIS_PORT = 6379
+    # Session扩展设置
+    SESSION_TYPE = 'redis'
 
 
 app = Flask(__name__)
@@ -24,11 +29,17 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 # 初始化redis
 redis_store = redis.StrictRedis(host=Config.REDIS_HOST, port=Config.REDIS_PORT)
+# 集成CSRF保护:提供校验cookie中csrf与表单提交过来的csrf是否一样
+csrf = CSRFProtect(app)
+# 集成session
+Session(app)
+# 集成数据库迁移
 
 
-@app.route('/index')
+@app.route('/', methods=['post', 'get'])
 def index():
-    # redis_store.set('name', 'xiaofang')
+    session['name'] = 'xiaoHong'
+    redis_store.set('name', 'xiaofang')
     return 'index'
 
 if __name__ == '__main__':
