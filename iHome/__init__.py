@@ -4,16 +4,35 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_session import Session
 from flask_wtf.csrf import CSRFProtect
-from config import Config
+from config import config
 
-app = Flask(__name__)
-# 用定义的配置类,并从中加载配置
-app.config.from_object(Config)
+
 # 配置数据库
-db = SQLAlchemy(app)
+db = SQLAlchemy()
 # 配置redis
-redis_store = redis.StrictRedis(host=Config.REDIS_HOST, port=Config.REDIS_PORT)
+redis_store = None
 # 配置Session
-Session(app)
+Session()
 # 配置csrf,校验表单,防止跨站请求伪造
-CSRFProtect(app)
+csrf = CSRFProtect()
+
+
+def create_app(config_name):
+    """工厂方法:根据不同的参数,生产不同的对象"""
+    app = Flask(__name__)
+    # 根据传入不同的配置类生产不同的app
+    # 用定义的配置类,并从中加载配置
+    _config = config[config_name]
+    app.config.from_object(_config)
+
+    # 配置数据库
+    db.init_app(app)
+    # redis初始化
+    global redis_store
+    redis_store = redis.StrictRedis(host=_config.REDIS_HOST, port=_config.REDIS_PORT)
+    # 配置Session
+    Session(app)
+    # 配置csrf,校验表单,防止跨站请求伪造
+    csrf.init_app(app)
+
+    return app
