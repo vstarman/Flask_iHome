@@ -1,3 +1,5 @@
 # 忽略文件
 .idea/
 *.py[cod]
+/logs/log*
+dump.rdb
