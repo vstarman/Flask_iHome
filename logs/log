@@ -184,3 +184,65 @@ INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 20:41:49] "GET /static/js/ihome/
 INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 20:41:53] "GET /register.html HTTP/1.1" 200 -
 INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 20:41:53] "GET /static/css/ihome/register.css HTTP/1.1" 200 -
 INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 20:41:53] "GET /static/js/ihome/register.js?v=4 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:05:18] "GET /register.html HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:05:18] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:05:18] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:05:18] "GET /static/css/reset.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:05:18] "GET /static/css/ihome/main.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:05:18] "GET /static/css/ihome/register.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:05:18] "GET /static/images/logo@128x59.png HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:05:18] "GET /static/js/jquery.min.js HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:05:18] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:05:18] "GET /static/js/ihome/register.js?v=4 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:05:19] "GET /api/v1.0/imagecode?cur=56e1254f-5e54-493c-9a76-3a3061d73207 HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:05:32] "GET /register.html HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:05:32] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:05:32] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:05:32] "GET /static/css/reset.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:05:32] "GET /static/css/ihome/main.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:05:32] "GET /static/css/ihome/register.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:05:32] "GET /static/images/logo@128x59.png HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:05:32] "GET /static/js/jquery.min.js HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:05:32] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:05:33] "GET /static/js/ihome/register.js?v=4 HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:05:33] "GET /api/v1.0/imagecode?cur=b39a2ed3-7e94-4551-8168-d7688d38bf37 HTTP/1.1" 404 -
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/__init__.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:21:09] "GET /register.html HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:21:09] "GET /api/v1.0/imagecode?cur=9c152144-f3bc-498d-bed1-a26d69d9552e HTTP/1.1" 500 -
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/verify.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/verify.py', reloading
+INFO _internal.py:87  * Restarting with stat
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:50:40] "GET /register.html HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:50:41] "GET /api/v1.0/imagecode?cur=05e54c0e-88e3-4c73-bca1-21fe61c42ec3 HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/verify.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+DEBUG verify.py:30 YMUK
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:51:02] "GET /api/v1.0/imagecode?cur=d53504ae-9dcd-400f-82c9-4b90ab4e49da HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/verify.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+DEBUG verify.py:29 KDID
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:51:36] "GET /api/v1.0/imagecode?cur=5432b9ad-9a89-40a2-b49b-ae5416a0d8fd HTTP/1.1" 200 -
+DEBUG verify.py:29 YDOM
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:51:36] "GET /api/v1.0/imagecode?cur=88eaf2a9-45cc-44ab-a51e-69b1ac574123 HTTP/1.1" 200 -
+DEBUG verify.py:29 XB3Z
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:51:36] "GET /api/v1.0/imagecode?cur=f3e34a49-e9e0-413d-aaec-18c535c10a56 HTTP/1.1" 200 -
+DEBUG verify.py:29 7LV8
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:51:36] "GET /api/v1.0/imagecode?cur=5adb2fc3-0c51-4acd-80aa-17fb73e08275 HTTP/1.1" 200 -
+DEBUG verify.py:29 YZE5
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:51:36] "GET /api/v1.0/imagecode?cur=d4c61e88-fdd6-40c0-9203-7f6b4dea5c28 HTTP/1.1" 200 -
+DEBUG verify.py:29 SELW
+INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 21:51:37] "GET /api/v1.0/imagecode?cur=874cd76e-4a2d-4210-8efb-2f00fdf3a42e HTTP/1.1" 200 -
