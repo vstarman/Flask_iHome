@@ -7,6 +7,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_session import Session
 from flask_wtf.csrf import CSRFProtect
 from config import config
+from utils.common import RegexConverter
 
 
 # 配置数据库
@@ -31,6 +32,9 @@ logging.getLogger().addHandler(file_log_handler)
 def create_app(config_name):
     """工厂方法:根据不同的参数,生产不同的app对象"""
     app = Flask(__name__)
+    # 向自定义过滤器添加到路由视图映射中
+    app.url_map.converters['re'] = RegexConverter
+
     # 用定义的配置类,并从中加载配置
     _config = config[config_name]
     app.config.from_object(_config)
