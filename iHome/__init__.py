@@ -11,20 +11,18 @@ from config import config
 db = SQLAlchemy()
 # 配置redis
 redis_store = None
-# 配置Session
-Session()
 # 配置csrf,校验表单,防止跨站请求伪造
 csrf = CSRFProtect()
 
 
 def create_app(config_name):
-    """工厂方法:根据不同的参数,生产不同的对象"""
+    """工厂方法:根据不同的参数,生产不同的app对象"""
     app = Flask(__name__)
-    # 根据传入不同的配置类生产不同的app
     # 用定义的配置类,并从中加载配置
     _config = config[config_name]
     app.config.from_object(_config)
-
+    # 配置Session
+    Session(app)
     # 配置数据库
     db.init_app(app)
     # redis初始化
@@ -35,4 +33,7 @@ def create_app(config_name):
     # 配置csrf,校验表单,防止跨站请求伪造
     csrf.init_app(app)
 
+    # 注册蓝图
+    from iHome import api_1_0
+    app.register_blueprint(api_1_0.api, url_prefix='/api/v1.0')
     return app
