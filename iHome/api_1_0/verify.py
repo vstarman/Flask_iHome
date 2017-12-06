@@ -19,6 +19,7 @@ def get_image_code():
     # 1.取到传入的图片码
     args = request.args
     cur = args.get('cur')
+    pre = args.get('pre')
 
     # 如果用户没传图片id直接抛错
     if not cur:
@@ -26,12 +27,16 @@ def get_image_code():
 
     # 2.生成验证码
     _, text, image = captcha.generate_captcha()
-    current_app.logger.debug(text)
+    # 测试: 终端打印text
+    # current_app.logger.debug(text)
 
     # 3.存储到redis中(key是图片编码,值是图片text内容)
     # redis_store.set('key', 'value', '过期时间')
     try:
-        redis_store.set('ImageCode_' + cur, text, constants.IMAGE_CODE_REDIS_EXPIRES)
+        if pre:
+            current_app.logger.debug(pre)
+            redis_store.delete('ImageCode_'+pre)
+        redis_store.set('ImageCode_'+cur, text, constants.IMAGE_CODE_REDIS_EXPIRES)
     except Exception as e:
         # 保存错误信息到log中
         current_app.logger.error(e)
@@ -39,4 +44,6 @@ def get_image_code():
 
     # 4.返回验证码图片,make_response为了为图片增加Content-Type
     response = make_response(image)
+    # 设置Content-Type
+    response.headers['Content-Type'] = 'image/jpg'
     return response
