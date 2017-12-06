@@ -3,3 +3,4 @@
 *.py[cod]
 /logs/log*
 dump.rdb
+/migrations
