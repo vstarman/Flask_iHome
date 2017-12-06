@@ -34,18 +34,25 @@ def create_app(config_name):
     # 用定义的配置类,并从中加载配置
     _config = config[config_name]
     app.config.from_object(_config)
+
     # 配置Session
     Session(app)
+
     # 配置数据库
     db.init_app(app)
+
     # redis初始化
     global redis_store
     redis_store = redis.StrictRedis(host=_config.REDIS_HOST, port=_config.REDIS_PORT)
-    # 配置Session
-    Session(app)
+
     # 配置csrf,校验表单,防止跨站请求伪造
     csrf.init_app(app)
+
     # 注册蓝图
     from iHome import api_1_0
     app.register_blueprint(api_1_0.api, url_prefix='/api/v1.0')
+
+    # 注册html静态资源文件蓝图
+    from web_html import html
+    app.register_blueprint(html)
     return app
