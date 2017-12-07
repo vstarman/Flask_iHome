@@ -354,3 +354,48 @@ DEBUG verify.py:37 a586b094-6928-4979-ad83-dd73837f532d
 INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 22:06:02] "GET /api/v1.0/imagecode?cur=d7d688d8-fd61-425b-838b-e92b11fab6c2&pre=a586b094-6928-4979-ad83-dd73837f532d HTTP/1.1" 200 -
 DEBUG verify.py:37 d7d688d8-fd61-425b-838b-e92b11fab6c2
 INFO _internal.py:87 127.0.0.1 - - [06/Dec/2017 22:06:02] "GET /api/v1.0/imagecode?cur=9dceebb0-1890-4031-859e-0316ddd1382d&pre=d7d688d8-fd61-425b-838b-e92b11fab6c2 HTTP/1.1" 200 -
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:43:11] "GET / HTTP/1.1" 500 -
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:43:11] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:43:11] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:43:11] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:43:11] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:43:11] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:43:18] "GET / HTTP/1.1" 500 -
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:43:18] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:43:18] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:43:18] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:43:18] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:46:38] "GET /register HTTP/1.1" 500 -
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:46:38] "GET /register?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:46:38] "GET /register?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:46:38] "GET /register?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:46:38] "GET /register HTTP/1.1" 500 -
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:46:38] "GET /register?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:46:38] "GET /register?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:49:52] "GET /register HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:49:53] "GET /favicon.ico HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:50:10] "GET /register.html HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:50:10] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:50:10] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:50:10] "GET /static/css/reset.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:50:10] "GET /static/css/ihome/main.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:50:10] "GET /static/css/ihome/register.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:50:10] "GET /static/images/logo@128x59.png HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:50:10] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:50:10] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:50:10] "GET /static/js/ihome/register.js?v=4 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:50:10] "GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:50:11] "GET /api/v1.0/imagecode?cur=90ad1520-9106-4c95-b6c9-55a41c9bcaea&pre= HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 16:50:14] "GET /api/v1.0/imagecode?cur=33e7f7ed-1373-4208-b5b4-3c4c1bad0a9d&pre=90ad1520-9106-4c95-b6c9-55a41c9bcaea HTTP/1.1" 200 -
