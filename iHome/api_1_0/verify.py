@@ -33,17 +33,17 @@ def send_sms():
         return jsonify(errno=RET.PARAMERR, errmsg='参数不全')
 
     # 2.判断手机号是否合法
-    if not re.match(r'^1[34578][0-9]{9}$'):
+    if not re.match(r'^1[34578][0-9]{9}$', mobile):
         return jsonify(errno=RET.PARAMERR, errmsg='电话号码格式错误')
 
     # 3.取到redis总缓存的验证码内容, 校验验证码
     try:
-        real_image_code = redis_store.get('imageCode_'+image_code_id)
+        real_image_code = redis_store.get('ImageCode_'+image_code_id)
         # 3.1 校验验证码
         if real_image_code.lower() != image_code.lower():
             return jsonify(errno=RET.PARAMERR, errmsg='验证码错误')
         # 3.2 删除验证码
-        redis_store.delete('imageCode_'+image_code_id)
+        redis_store.delete('ImageCode_'+image_code_id)
     except Exception as e:
         # 验证码过期
         current_app.logger.error(e)
@@ -52,6 +52,7 @@ def send_sms():
     # 4.生成短信验证码,发送
     sms_code = random.randint(0, 999999)
     sms_code = '%06d' % sms_code
+    current_app.logger.debug('短信验证码: %s' % sms_code)
     # 云通讯过期时间单位为分钟
     result = CCP().send_text_sms(mobile, [sms_code, constants.SMS_CODE_REDIS_EXPIRES/60], '1')
     if result == 0:
@@ -88,7 +89,7 @@ def get_image_code():
 
     # 2.生成验证码
     _, text, image = captcha.generate_captcha()
-
+    current_app.logger.debug(text)
     # 3.存储到redis中(key是图片编码,值是图片text内容)
     # redis_store.set('key', 'value', '过期时间')
     try:

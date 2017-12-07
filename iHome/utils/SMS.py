@@ -31,7 +31,7 @@ class CCP(object):
     def __new__(cls, *args, **kwargs):
         """用单例只初始化一次SDK"""
         if not hasattr(cls, "_instance"):
-            cls._instance = super(CCP, cls).__new__(cls, args, kwargs)
+            cls._instance = super(CCP, cls).__new__(cls, *args, **kwargs)
             cls._instance.rest = REST(serverIP, serverPort, softVersion)
             cls._instance.rest.setAccount(accountSid, accountToken)
             cls._instance.rest.setAppId(appId)
