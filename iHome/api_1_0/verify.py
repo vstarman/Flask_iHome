@@ -1,26 +1,71 @@
 # -*- coding:utf-8 -*-
 # 验证码:图片验证码,短信验证码
-from flask import request, abort, current_app, jsonify, make_response
+import re, random
+from flask import request, abort, current_app, jsonify, \
+    make_response, json
+from iHome import redis_store
 from . import api
 from iHome.utils.captcha.captcha import captcha
 from iHome import redis_store, constants
 from iHome.utils.response_code import RET
+from iHome.utils.SMS import CCP
 
-#
-# @api.route('/sms', method=['POST'])
-# def send_sms():
-#     """:发送短信验证码
-#     1.获取参数并判断是否为空
-#     2.判断手机号是否合法
-#     3.取到redis总缓存的验证码内容,校验验证码
-#     4.生成短信验证码
-#     5.给前端响应结果
-#     :return:
-#     """
+
+@api.route('/sms', methods=['POST'])
+def send_sms():
+    """:发送短信验证码
+    1.获取参数并判断是否为空
+    2.判断手机号是否合法
+    3.取到redis总缓存的验证码内容,校验验证码
+    4.生成短信验证码
+    5.保存验证码
+    6.发送成功
+    :return:
+    """
     # 1.获取参数并判断是否为空
-    # data =
+    data = request.data
+    data_dict = json.loads(data)
+    mobile = data_dict.get('mobile')
+    image_code = data_dict.get('image_code')
+    image_code_id = data_dict.get('image_code_id')
 
+    if not all([mobile, image_code, image_code_id]):
+        return jsonify(errno=RET.PARAMERR, errmsg='参数不全')
 
+    # 2.判断手机号是否合法
+    if not re.match(r'^1[34578][0-9]{9}$'):
+        return jsonify(errno=RET.PARAMERR, errmsg='电话号码格式错误')
+
+    # 3.取到redis总缓存的验证码内容, 校验验证码
+    try:
+        real_image_code = redis_store.get('imageCode_'+image_code_id)
+        # 3.1 校验验证码
+        if real_image_code.lower() != image_code.lower():
+            return jsonify(errno=RET.PARAMERR, errmsg='验证码错误')
+        # 3.2 删除验证码
+        redis_store.delete('imageCode_'+image_code_id)
+    except Exception as e:
+        # 验证码过期
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg='获取验证码失败')
+
+    # 4.生成短信验证码,发送
+    sms_code = random.randint(0, 999999)
+    sms_code = '%06d' % sms_code
+    # 云通讯过期时间单位为分钟
+    result = CCP().send_text_sms(mobile, [sms_code, constants.SMS_CODE_REDIS_EXPIRES/60], '1')
+    if result == 0:
+        return jsonify(errno=RET.THIRDERR, errmsg='发送短信验证码失败')
+
+    # 5.保存短信码到redis,以便后续验证
+    try:
+        redis_store.set('SMS'+mobile, sms_code, constants.SMS_CODE_REDIS_EXPIRES)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg='保存验证码失败')
+
+    # 6.发送成功
+    return jsonify(errno=RET.OK, errmsg='发送成功')
 
 
 @api.route('/imagecode')
