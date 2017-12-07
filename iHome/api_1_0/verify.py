@@ -7,6 +7,17 @@ from iHome import redis_store, constants
 from iHome.utils.response_code import RET
 
 
+@api.route('/sms', method=['POST'])
+def send_sms():
+    """
+    1.获取参数并判断是否为空
+    2.判断手机号是否合法
+    3.取到redis总缓存的验证码内容
+    4.校验验证码,如验证
+    :return:
+    """
+
+
 @api.route('/imagecode')
 def get_image_code():
     """
