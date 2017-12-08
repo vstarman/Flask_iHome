@@ -588,3 +588,59 @@ DEBUG verify.py:92 XTKQ
 INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 20:17:50] "GET /api/v1.0/imagecode?cur=65c1dafa-865b-46b6-8b9c-e451909ab6ea&pre= HTTP/1.1" 200 -
 DEBUG verify.py:55 短信验证码: 966568
 INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 20:18:01] "POST /api/v1.0/sms HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/verify.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/verify.py', reloading
+INFO _internal.py:87  * Restarting with stat
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 21:39:50] "GET /register.html HTTP/1.1" 304 -
+DEBUG verify.py:103 L9TW
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 21:39:51] "GET /api/v1.0/imagecode?cur=e1de48e8-5894-4fa7-982b-7b1d5134583f&pre= HTTP/1.1" 200 -
+DEBUG verify.py:103 YOXD
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 21:39:52] "GET /api/v1.0/imagecode?cur=0aafc430-48ac-4886-ba65-032bd49ad05d&pre=e1de48e8-5894-4fa7-982b-7b1d5134583f HTTP/1.1" 200 -
+DEBUG verify.py:103 NCIY
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 21:39:53] "GET /api/v1.0/imagecode?cur=21d0bb20-a971-4c7c-917a-c99cc64b019c&pre=0aafc430-48ac-4886-ba65-032bd49ad05d HTTP/1.1" 200 -
+DEBUG verify.py:103 DL9O
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 21:39:53] "GET /api/v1.0/imagecode?cur=d54a5ae0-72b3-44d0-b4ba-c3b4159fe6e8&pre=21d0bb20-a971-4c7c-917a-c99cc64b019c HTTP/1.1" 200 -
+DEBUG verify.py:103 FS4L
+INFO _internal.py:87 127.0.0.1 - - [07/Dec/2017 21:39:54] "GET /api/v1.0/imagecode?cur=91c02bfc-53ba-468a-b135-09644b1bba96&pre=d54a5ae0-72b3-44d0-b4ba-c3b4159fe6e8 HTTP/1.1" 200 -
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 12:28:08] "GET /register.html HTTP/1.1" 500 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 12:28:09] "GET /register.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 12:28:09] "GET /register.html?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 12:28:09] "GET /register.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 12:28:09] "GET /register.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 12:28:10] "GET /register.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 12:29:03] "GET /register.html HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 12:29:03] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 12:29:03] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 12:29:03] "GET /static/css/reset.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 12:29:03] "GET /static/css/ihome/main.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 12:29:03] "GET /static/css/ihome/register.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 12:29:03] "GET /static/images/logo@128x59.png HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 12:29:03] "GET /static/js/jquery.min.js HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 12:29:03] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 12:29:03] "GET /static/js/ihome/register.js?v=4 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 12:29:03] "GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 304 -
+DEBUG verify.py:103 KZ5D
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 12:29:04] "GET /api/v1.0/imagecode?cur=4c9d8d4b-744c-4b92-a7c2-57fb637efcb3&pre= HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 12:33:47] "GET /index. HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 12:33:50] "GET / HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 12:33:50] "GET /static/plugins/swiper/css/swiper.min.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 12:33:50] "GET /static/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 12:33:50] "GET /static/css/ihome/index.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 12:33:50] "GET /static/plugins/swiper/js/swiper.jquery.min.js HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 12:33:50] "GET /static/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 12:33:50] "GET /static/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 12:33:50] "GET /static/js/template.js HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 12:33:50] "GET /static/js/ihome/index.js HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 12:33:55] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 12:33:55] "GET /static/plugins/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 304 -

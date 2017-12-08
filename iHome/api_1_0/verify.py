@@ -9,6 +9,7 @@ from iHome.utils.captcha.captcha import captcha
 from iHome import redis_store, constants
 from iHome.utils.response_code import RET
 from iHome.utils.SMS import CCP
+from iHome.models import User
 
 
 @api.route('/sms', methods=['POST'])
@@ -20,6 +21,7 @@ def send_sms():
     4.生成短信验证码
     5.保存验证码
     6.发送成功
+    7.手机号验证码校验
     :return:
     """
     # 1.获取参数并判断是否为空
@@ -41,7 +43,7 @@ def send_sms():
         real_image_code = redis_store.get('ImageCode_'+image_code_id)
         # 3.1 校验验证码
         if real_image_code.lower() != image_code.lower():
-            return jsonify(errno=RET.PARAMERR, errmsg='验证码错误')
+            return jsonify(errno=RET.DATAERR, errmsg='验证码错误')
         # 3.2 删除验证码
         redis_store.delete('ImageCode_'+image_code_id)
     except Exception as e:
@@ -64,6 +66,15 @@ def send_sms():
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg='保存验证码失败')
+
+    # 7.校验手机号
+    try:
+        user = User.query.filter_by(mobile=mobile).first()
+        if user:
+            return jsonify(errno=RET.DATAEXIST, errmsg='手机号已被注册')
+    except Exception as e:
+        current_app.logger.debug(e)
+        return jsonify(errno=RET.DATAERR, errmsg='数据库错误')
 
     # 6.发送成功
     return jsonify(errno=RET.OK, errmsg='发送成功')

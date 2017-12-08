@@ -79,8 +79,14 @@ function sendSMSCode() {
                     }
                 }, 1000, 60)
             }else {
-                alert(resp.errmsg)
+                $("#phone-code-err span").html(resp.errmsg);
+                $("#phone-code-err").show();
+                // 将点击按钮的onclick事件函数恢复回去
                 $(".phonecode-a").attr("onclick", "sendSMSCode();");
+                // 如果错误码是4004，代表验证码错误，重新生成验证码
+                if (resp.errno == "4004") {
+                    generateImageCode()
+                }
             }
         }
     })
