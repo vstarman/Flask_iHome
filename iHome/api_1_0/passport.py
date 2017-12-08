@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 # 实现用户注册,登录功能
-from flask import request, current_app, jsonify, redirect, session
+from flask import request, current_app, jsonify, session
 from . import api
 from iHome import redis_store, db
 from iHome.utils.response_code import RET
