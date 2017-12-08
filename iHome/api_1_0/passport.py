@@ -8,8 +8,8 @@ from iHome.models import User
 
 
 @api.route('/users', methods=['POST'])
-def login():
-    """
+def register():
+    """注册逻辑实现
     1.获取数据并判断不为空;
     2.取出本地手机验证码;
     3.与传入的验证码校验;
@@ -62,3 +62,42 @@ def login():
     session['user_mobile'] = user.mobile
 
     return jsonify(errno=RET.OK, errmsg='注册成功')
+
+
+@api.route('/session', methods=['POST'])
+def login():
+    """登录逻辑实现
+    1.获取手机号和密码
+    2.校验手机号和密码
+    3.保存登录结果
+    4.返回结果
+    :return:
+    """
+    # 1.获取手机号和密码
+    get = request.json.get
+    mobile = get('mobile')
+    password = get('password')
+
+    # 2.校验手机号和密码
+    if not all([mobile, password]):
+        return jsonify(errno=RET.PARAMERR, errmsg='数据不齐全')
+    try:
+        user = User.query.filter_by(mobile=mobile).first()
+    except Exception as e:
+        current_app.logger.debug(e)
+        return jsonify(errno=RET.DBERR, errmsg='数据库错误')
+
+    if not user:
+        return jsonify(errno=RET.DATAEXIST, errmsg='用户不存在')
+
+    # 2.1 校验密码
+    if not user.check_password(password):
+        return jsonify(errno=RET.PWDERR, errmsg='用户名或密码错误')
+
+    # 3.保存登录结果
+    session['user_name'] = user.name
+    session['user_mobile'] = user.mobile
+    session['user_id'] = user.id
+
+    # 4.返回结果
+    return jsonify(errno=RET.OK, errmsg='登陆成功')
