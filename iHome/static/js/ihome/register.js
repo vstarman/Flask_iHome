@@ -46,7 +46,7 @@ function sendSMSCode() {
         return;
     }
 
-    // TODO: 通过ajax方式向后端接口发送请求，让后端发送短信验证码
+    // TOD: 通过ajax方式向后端接口发送请求，让后端发送短信验证码
     // 1.组织后端需求的参数
     var params = {
         'mobile': mobile,
@@ -111,7 +111,7 @@ $(document).ready(function() {
         $("#password2-err").hide();
     });
 
-    // TODO: 注册的提交(判断参数是否为空)
+    // TOD: 注册的提交(判断参数是否为空)
 $(".form-register").submit(function (e) {
         // 阻止默认提交事件
         e.preventDefault();
@@ -162,7 +162,7 @@ $(".form-register").submit(function (e) {
             success: function (resp) {
                 if (resp.errno == "0") {
                     // 跳转到首页
-                    location.href = "/index.html"
+                    location.href = "/login.html"
                 }else {
                     $("#password2-err span").html(resp.errmsg);
                     $("#password2-err").show();
