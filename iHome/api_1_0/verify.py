@@ -3,7 +3,6 @@
 import re, random
 from flask import request, abort, current_app, jsonify, \
     make_response, json
-from iHome import redis_store
 from . import api
 from iHome.utils.captcha.captcha import captcha
 from iHome import redis_store, constants
@@ -18,10 +17,10 @@ def send_sms():
     1.获取参数并判断是否为空
     2.判断手机号是否合法
     3.取到redis总缓存的验证码内容,校验验证码
-    4.生成短信验证码
-    5.保存验证码
-    6.发送成功
-    7.手机号验证码校验
+    4.手机号验证码校验
+    5.生成短信验证码
+    6.保存验证码
+    7.发送成功
     :return:
     """
     # 1.获取参数并判断是否为空
@@ -51,23 +50,7 @@ def send_sms():
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg='获取验证码失败')
 
-    # 4.生成短信验证码,发送
-    sms_code = random.randint(0, 999999)
-    sms_code = '%06d' % sms_code
-    current_app.logger.debug('短信验证码: %s' % sms_code)
-    # 云通讯过期时间单位为分钟
-    result = CCP().send_text_sms(mobile, [sms_code, constants.SMS_CODE_REDIS_EXPIRES/60], '1')
-    if result == 0:
-        return jsonify(errno=RET.THIRDERR, errmsg='发送短信验证码失败')
-
-    # 5.保存短信码到redis,以便后续验证
-    try:
-        redis_store.set('SMS'+mobile, sms_code, constants.SMS_CODE_REDIS_EXPIRES)
-    except Exception as e:
-        current_app.logger.error(e)
-        return jsonify(errno=RET.DBERR, errmsg='保存验证码失败')
-
-    # 7.校验手机号
+    # 4.校验手机号
     try:
         user = User.query.filter_by(mobile=mobile).first()
         if user:
@@ -76,7 +59,23 @@ def send_sms():
         current_app.logger.debug(e)
         return jsonify(errno=RET.DATAERR, errmsg='数据库错误')
 
-    # 6.发送成功
+    # 5.生成短信验证码,发送
+    sms_code = random.randint(0, 999999)
+    sms_code = '%06d' % sms_code
+    current_app.logger.debug('短信验证码: %s' % sms_code)
+    # 云通讯过期时间单位为分钟
+    result = CCP().send_text_sms(mobile, [sms_code, constants.SMS_CODE_REDIS_EXPIRES/60], '1')
+    if result == 0:
+        return jsonify(errno=RET.THIRDERR, errmsg='发送短信验证码失败')
+
+    # 6.保存短信码到redis,以便后续验证
+    try:
+        redis_store.set('SMS_'+mobile, sms_code, constants.SMS_CODE_REDIS_EXPIRES)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg='保存验证码失败')
+
+    # 7.发送成功
     return jsonify(errno=RET.OK, errmsg='发送成功')
 
 

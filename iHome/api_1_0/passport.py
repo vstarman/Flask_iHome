@@ -1,0 +1,66 @@
+# -*- coding:utf-8 -*-
+# 实现用户注册,登录功能
+from flask import request, current_app, jsonify, redirect, session
+from . import api
+from iHome import redis_store, db
+from iHome.utils.response_code import RET
+from iHome.models import User
+
+
+@api.route('/user', methods=['POST'])
+def login():
+    """
+    1.获取数据并判断不为空;
+    2.取出本地手机验证码;
+    3.与传入的验证码校验;
+    4.创建用户模型,保存信息到数据库;
+    5.返回响应
+    :return:
+    """
+    # 1.获取数据并判断不为空;
+    # data = request.data
+    # json_dict = json.loads(data)
+    json_dict = request.json
+    mobile = json_dict.get('mobile')
+    sms_code = json_dict.get('sms_code')
+    password = json_dict.get('password')
+    if not all([mobile, sms_code, password]):
+        return jsonify(errno=RET.PARAMERR, errmsg='数据不完整')
+
+    # 2.取出本地手机验证码;
+    try:
+        sms_code2 = redis_store.get('SMS_'+mobile)
+        redis_store.delete('SMS_'+mobile)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg='获取手机号错误')
+
+    if not sms_code2:   # 验证码已过期
+        return jsonify(errno=RET.NODATA, errmsg='验证码已过期')
+
+    # 3.与传入的验证码校验;
+    if sms_code != sms_code2:
+        return jsonify(errno=RET.PARAMERR, errmsg='手机验证码错误')
+
+    # 4.创建用户模型, 保存信息到数据库;
+    user = User()
+    user.mobile = mobile
+    user.name = mobile
+    user.password = password
+
+    try:
+        db.session.add(user)
+        db.session.commit()
+    except Exception as e:
+        current_app.logger.error(e)
+        db.session.rollback()
+        return jsonify(errno=RET.DBERR, errmsg='数据存储失败')
+
+    # 5.保存信息到session
+    session['user_id'] = user.id
+    session['user_name'] = user.mobile
+    session['user_mobile'] = user.mobile
+
+    return redirect('index.html')
+
+
