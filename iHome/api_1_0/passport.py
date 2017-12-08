@@ -7,7 +7,7 @@ from iHome.utils.response_code import RET
 from iHome.models import User
 
 
-@api.route('/user', methods=['POST'])
+@api.route('/users', methods=['POST'])
 def login():
     """
     1.获取数据并判断不为空;
@@ -22,7 +22,7 @@ def login():
     # json_dict = json.loads(data)
     json_dict = request.json
     mobile = json_dict.get('mobile')
-    sms_code = json_dict.get('sms_code')
+    sms_code = json_dict.get('phonecode')
     password = json_dict.get('password')
     if not all([mobile, sms_code, password]):
         return jsonify(errno=RET.PARAMERR, errmsg='数据不完整')
@@ -61,6 +61,4 @@ def login():
     session['user_name'] = user.mobile
     session['user_mobile'] = user.mobile
 
-    return redirect('index.html')
-
-
+    return jsonify(errno=RET.OK, errmsg='注册成功')

@@ -112,4 +112,62 @@ $(document).ready(function() {
     });
 
     // TODO: 注册的提交(判断参数是否为空)
+$(".form-register").submit(function (e) {
+        // 阻止默认提交事件
+        e.preventDefault();
+
+        // 实现自己的POST请求逻辑
+        var mobile = $("#mobile").val();
+        var phonecode = $("#phonecode").val();
+        var password = $("#password").val();
+        var password2 = $("#password2").val();
+
+        if (!mobile) {
+            // 弹出提示
+            $("#mobile-err span").html("请输入手机号");
+            $("#mobile-err").show();
+            return
+        }
+        if (!phonecode) {
+            $("#phone-code-err span").html("请填写短信验证码！");
+            $("#phone-code-err").show();
+            return;
+        }
+        if (!password) {
+            $("#password-err span").html("请填写密码!");
+            $("#password-err").show();
+            return;
+        }
+        if (password != password2) {
+            $("#password2-err span").html("两次密码不一致!");
+            $("#password2-err").show();
+            return;
+        }
+
+        var params = {
+            "mobile": mobile,
+            "phonecode": phonecode,
+            "password": password
+        }
+
+        // 通过ajax方式向后端接口发送请求，让后端发送短信验证码
+        $.ajax({
+            url: "/api/v1.0/users",
+            type: "post",
+            contentType: "application/json",
+            headers: {
+                "X-CSRFToken": getCookie("csrf_token")
+            },
+            data: JSON.stringify(params),
+            success: function (resp) {
+                if (resp.errno == "0") {
+                    // 跳转到首页
+                    location.href = "/index.html"
+                }else {
+                    $("#password2-err span").html(resp.errmsg);
+                    $("#password2-err").show();
+                }
+            }
+        })
+    })
 });

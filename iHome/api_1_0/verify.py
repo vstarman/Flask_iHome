@@ -41,6 +41,8 @@ def send_sms():
     try:
         real_image_code = redis_store.get('ImageCode_'+image_code_id)
         # 3.1 校验验证码
+        if not real_image_code:
+            return jsonify(errno=RET.NODATA, errmsg='验证码已过期')
         if real_image_code.lower() != image_code.lower():
             return jsonify(errno=RET.DATAERR, errmsg='验证码错误')
         # 3.2 删除验证码
@@ -64,9 +66,9 @@ def send_sms():
     sms_code = '%06d' % sms_code
     current_app.logger.debug('短信验证码: %s' % sms_code)
     # 云通讯过期时间单位为分钟
-    result = CCP().send_text_sms(mobile, [sms_code, constants.SMS_CODE_REDIS_EXPIRES/60], '1')
-    if result == 0:
-        return jsonify(errno=RET.THIRDERR, errmsg='发送短信验证码失败')
+    # result = CCP().send_text_sms(mobile, [sms_code, constants.SMS_CODE_REDIS_EXPIRES/60], '1')
+    # if result == 0:
+    #     return jsonify(errno=RET.THIRDERR, errmsg='发送短信验证码失败')
 
     # 6.保存短信码到redis,以便后续验证
     try:
