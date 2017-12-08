@@ -822,3 +822,20 @@ INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 16:53:33] "POST /api/v1.0/sessio
 INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 16:53:34] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
 INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 16:55:25] "POST /api/v1.0/session HTTP/1.1" 200 -
 INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 16:55:29] "POST /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 17:37:55] "GET /my.html HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 17:37:55] "GET /static/css/ihome/my.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 17:37:55] "GET /static/js/ihome/my.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 17:38:00] "GET /profile.html HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 17:38:00] "GET /static/css/ihome/profile.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 17:38:00] "GET /static/js/jquery.form.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 17:38:00] "GET /static/js/ihome/profile.js?v=5 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 17:38:03] "GET /api/v1.0/avatar?avatar= HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [08/Dec/2017 17:39:45] "GET /api/v1.0/avatar?avatar= HTTP/1.1" 404 -
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/libs/yuntongxun/CCPRestSDK.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/__init__.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659

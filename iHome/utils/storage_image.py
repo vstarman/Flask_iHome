@@ -21,6 +21,8 @@ def storage_image(data):
     if info.status_code != 200:
         raise Exception('七牛云上传文件失败')
 
+    return ret.get('key')
+
 if __name__ == '__main__':
     file_name = raw_input('请输入文件名: ')
     with open(file_name, 'rb') as f:
