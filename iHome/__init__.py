@@ -48,7 +48,7 @@ def create_app(config_name):
     # redis初始化
     global redis_store
     redis_store = redis.StrictRedis(host=_config.REDIS_HOST, port=_config.REDIS_PORT)
-    # redis_store.get()
+    # redis_store.set
 
     # 配置csrf,校验表单,防止跨站请求伪造
     csrf.init_app(app)
