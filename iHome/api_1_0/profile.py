@@ -34,7 +34,7 @@ def set_user_name():
         return jsonify(errno=RET.DBERR, errmsg='查询当前登录用户失败')
 
     if not user:
-        return jsonify(errno=RET.USERERR, errmsg='用户不存在')
+        return jsonify(errno=RET.USERERR, errmsg='用户未登录')
 
     # 4.更新用户名信息到数据库
     try:

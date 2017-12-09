@@ -36,7 +36,34 @@ $(document).ready(function () {
         })
     })
 
-    // TODO: 管理用户名修改的逻辑
+    // TOD: 管理用户名修改的逻辑
+    $("#form-name").submit(function (e) {
+        e.preventDefault()
+
+        var name = $("#user-name").val()
+        if (!name) {
+            alert("请输入昵称")
+            return
+        }
+
+        $.ajax({
+            url: "/api/v1.0/user/name",
+            type: "post",
+            headers: {
+                "X-CSRFToken": getCookie("csrf_token")
+            },
+            contentType: "application/json",
+            data: JSON.stringify({"name": name}),
+            success: function (resp) {
+                if (resp.errno == "0") {
+                    $(".error-msg").hide()
+                    showSuccessMsg()
+                }else {
+                    $(".error-msg").show()
+                }
+            }
+        })
+    })
 
 })
 
