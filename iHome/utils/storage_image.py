@@ -1,11 +1,10 @@
 # -*- coding:utf-8 -*-
 from qiniu import Auth, put_data
 
-access_key = '未注册,pass'
-secret_key = '未注册,pass'
+access_key = "yV4GmNBLOgQK-1Sn3o4jktGLFdFSrlywR2C-hvsW"
+secret_key = "bixMURPL6tHjrb8QKVg2tm7n9k8C7vaOeQ4MEoeW"
 
-bucket_name = 'FlaskIHome'
-key = 'my-python-logo.png'
+bucket_name = "ihome"
 
 
 def storage_image(data):

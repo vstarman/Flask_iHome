@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-# 验证码:图片验证码,短信验证码
+# 进行图片,短信验证码发送
 import re, random
 from flask import request, abort, current_app, jsonify, \
     make_response, json
