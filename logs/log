@@ -1733,3 +1733,28 @@ INFO _internal.py:87 127.0.0.1 - - [09/Dec/2017 21:49:00] "GET /static/images/lo
 INFO _internal.py:87 127.0.0.1 - - [09/Dec/2017 21:49:00] "GET /static/plugins/swiper/js/swiper.jquery.min.js HTTP/1.1" 200 -
 INFO _internal.py:87 127.0.0.1 - - [09/Dec/2017 21:49:01] "GET /static/js/ihome/index.js HTTP/1.1" 200 -
 INFO _internal.py:87 127.0.0.1 - - [09/Dec/2017 21:49:01] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [09/Dec/2017 22:06:55] "GET /newhouse.html HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [09/Dec/2017 22:06:55] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [09/Dec/2017 22:06:55] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [09/Dec/2017 22:06:55] "GET /static/css/reset.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [09/Dec/2017 22:06:55] "GET /static/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [09/Dec/2017 22:06:55] "GET /static/css/ihome/main.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [09/Dec/2017 22:06:55] "GET /static/css/ihome/newhouse.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [09/Dec/2017 22:06:55] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [09/Dec/2017 22:06:55] "GET /static/js/jquery.form.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [09/Dec/2017 22:06:55] "GET /static/js/template.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [09/Dec/2017 22:06:55] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [09/Dec/2017 22:06:55] "GET /static/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [09/Dec/2017 22:06:55] "GET /static/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [09/Dec/2017 22:06:55] "GET /static/js/ihome/newhouse.js?v=3 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [09/Dec/2017 22:06:55] "GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [09/Dec/2017 22:06:56] "GET /static/plugins/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [09/Dec/2017 22:06:56] "GET /api/v1.0/areas HTTP/1.1" 404 -
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/__init__.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87 127.0.0.1 - - [09/Dec/2017 22:07:22] "GET /newhouse.html HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [09/Dec/2017 22:07:23] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [09/Dec/2017 22:58:07] "GET /newhouse.html HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [09/Dec/2017 22:58:08] "GET /api/v1.0/areas HTTP/1.1" 200 -
