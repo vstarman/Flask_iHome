@@ -13,8 +13,25 @@ function getCookie(name) {
 }
 
 $(document).ready(function(){
-    // TODO: 查询用户的实名认证信息
-
+    // TOD: 查询用户的实名认证信息
+    $.get("/api/v1.0/user/auth", function (resp) {
+        if (resp.errno == "0") {
+            // 判断是否有认证信息，如果有进行显示并且将保存按钮隐藏和输入框置为不可用
+            if (resp.data.real_name && resp.data.id_card) {
+                // 进行显示
+                $("#user-name").val(resp.data.real_name)
+                $("#id-card").val(resp.data.id_card)
+                // 并且将保存按钮隐藏和输入框置为不可用
+                $(".btn-success").hide()
+                $("#user-name").prop("disabled", true)
+                $("#id-card").prop("disabled", true)
+            }
+        }else if (resp.errno == "4101"){
+            location.href = "/login.html"
+        }else {
+            alert(resp.errmsg)
+        }
+    })
 
     // TODO: 管理实名信息表单的提交行为
 

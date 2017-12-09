@@ -44,6 +44,14 @@ class User(BaseModel, db.Model):
 
     def to_dict(self):
         """为模型增加字典属性,方便传递"""
+        auth_dict = {
+            'id_card': self.id_card,
+            'real_name': self.real_name,
+        }
+        return auth_dict
+
+    def to_auth_dict(self):
+        """为模型增加字典属性,方便传递"""
         user_dict = {
             'avatar_url': constants.QINIU_DOMIN_PREFIX + self.avatar_url,
             'name': self.name,

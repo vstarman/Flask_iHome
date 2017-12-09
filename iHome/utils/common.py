@@ -20,7 +20,7 @@ def login_require(f):
         try:
             user_id = session.get('user_id')
             if not user_id:
-                jsonify(errno=RET.SESSIONERR, errmsg='用户未登录')
+                return jsonify(errno=RET.SESSIONERR, errmsg='用户未登录')
         except Exception as e:
             current_app.logger.error(e)
         return f(*args, **kwargs)

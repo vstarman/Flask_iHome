@@ -37,7 +37,12 @@ $(document).ready(function () {
                 if (resp.errno == "0") {
                     // 代表上传成功
                     $("#user-avatar").attr("src", resp.data.avatar_url)
-                }else {
+                    location.href = '/profile.html'
+                }
+                else if (resp.errno == '4101'){
+                    location.href = '/index.html'
+                }
+                else {
                     alert(resp.errmsg)
                 }
             }
@@ -66,6 +71,11 @@ $(document).ready(function () {
                 if (resp.errno == "0") {
                     $(".error-msg").hide()
                     showSuccessMsg()
+                    location.href = '/profile.html'
+                }
+                else if (resp.errno == '4101'){
+                    location.href = '/index.html'
+
                 }else {
                     $(".error-msg").show()
                 }

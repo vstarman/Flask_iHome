@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 # 个人信息视图模块:上传到图片七牛云
 from . import api
-from flask import session, current_app, jsonify, request
+from flask import session, current_app, jsonify, request, g
 from iHome.utils.response_code import RET
 from iHome.utils.storage_image import storage_image
 from iHome.models import User
@@ -10,10 +10,37 @@ from iHome import constants
 from iHome.utils.common import login_require
 
 
+@api.route('/user/auth', methods=['get'])
+@login_require
+def get_auth_info():
+    """实名认证,显示
+    1.获取姓名,身份证号码
+    2.设置到数据库
+    3.返回状态
+    :return:
+    """
+    user_id = g.user_id
+    print g
+
+    try:
+        user = User.query.get(user_id)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg='查询当前登录用户失败')
+
+    if not user:
+        return jsonify(errno=RET.USERERR, errmsg='用户不存在')
+
+    return jsonify(errno=RET.OK, errmsg='', data=user.to_auth_dict())
+
+
+
+
+
 @api.route('/user', methods=['GET'])
 @login_require
 def get_user_info():
-    """
+    """用户信息修改中心
     0.校验登录状态:装饰其实现
     1.获取用户对象
     2.查询头像
@@ -46,7 +73,7 @@ def get_user_info():
 @api.route('/user/name', methods=['POST'])
 @login_require
 def set_user_name():
-    """
+    """修改用户名
     1.验证是否登录
     2.获取要设置的用户名,并判空
     3.取到当前用户id并设置模型
@@ -89,7 +116,7 @@ def set_user_name():
 @api.route('/user/avatar', methods=['POST'])
 @login_require
 def upload_avatar():
-    """
+    """修改用户头像
     1.TODO 判断是否登录;
     2.获取要上传的文件;
     3.上传到七牛云;
