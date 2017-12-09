@@ -10,7 +10,7 @@ from iHome import constants
 from iHome.utils.common import login_require
 
 
-@api.route('/user/auth', methods=['get'])
+@api.route('/user/auth', methods=['GET'])
 @login_require
 def get_auth_info():
     """实名认证,显示
@@ -20,7 +20,6 @@ def get_auth_info():
     :return:
     """
     user_id = g.user_id
-    print g
 
     try:
         user = User.query.get(user_id)
@@ -31,10 +30,49 @@ def get_auth_info():
     if not user:
         return jsonify(errno=RET.USERERR, errmsg='用户不存在')
 
-    return jsonify(errno=RET.OK, errmsg='', data=user.to_auth_dict())
+    return jsonify(errno=RET.OK, errmsg='', data=user.set_auth_dict())
 
 
+@api.route('/user/auth', methods=['POST'])
+@login_require
+def set_auth_info():
+    """实名认证,显示
+    1.获取姓名,身份证号码
+    2.设置到数据库
+    3.返回状态
+    :return:
+    """
+    # 1.获取姓名, 身份证号码
+    get = request.json.get
+    real_name = get('real_name')
+    id_card = get('id_card')
 
+    if not all([real_name, id_card]):
+        return jsonify(errno=RET.PARAMERR, errmsg='参数不全')
+
+    # 2.获取用户对象,设置到数据库
+    user_id = g.user_id
+    try:
+        user = User.query.get(user_id)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg='查询当前登录用户失败')
+
+    if not user:
+        return jsonify(errno=RET.USERERR, errmsg='用户不存在')
+
+    user.real_name = real_name
+    user.id_card = id_card
+
+    try:
+        db.session.commit()
+    except Exception as e:
+        current_app.logger.error(e)
+        db.session.rollback()
+        return jsonify(errno=RET.DBERR, errmsg='数据库存储用户认证信息失败')
+
+    # 3.返回状态
+    return jsonify(errno=RET.OK, errmsg='', data=user.set_auth_dict())
 
 
 @api.route('/user', methods=['GET'])

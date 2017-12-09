@@ -42,7 +42,7 @@ class User(BaseModel, db.Model):
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
 
-    def to_dict(self):
+    def set_auth_dict(self):
         """为模型增加字典属性,方便传递"""
         auth_dict = {
             'id_card': self.id_card,

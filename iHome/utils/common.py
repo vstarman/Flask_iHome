@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 # 通用工具:
 # 用来定义正则, 登录装饰器
-from flask import session, jsonify, current_app
+from flask import session, jsonify, current_app, g
 from werkzeug.routing import BaseConverter
 from iHome.utils.response_code import RET
 import functools
@@ -19,6 +19,7 @@ def login_require(f):
     def wrapper(*args, **kwargs):
         try:
             user_id = session.get('user_id')
+            g.user_id = user_id
             if not user_id:
                 return jsonify(errno=RET.SESSIONERR, errmsg='用户未登录')
         except Exception as e:
