@@ -7,6 +7,41 @@ from iHome.utils.storage_image import storage_image
 from iHome import constants
 from iHome.models import User
 from iHome import db
+from iHome import constants
+
+
+@api.route('/user', methods=['GET'])
+def get_user_info():
+    """
+    0.校验登录状态:装饰其实现
+    1.获取用户对象
+    2.查询头像
+    3.查询昵称
+    4.返回ok
+    :return:
+    """
+    # 0.校验登录状态
+    # 1.获取用户对象
+    try:
+        user = User.query.get(session['user_id'])
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg='查询当前登录用户失败')
+
+    if not user:
+        return jsonify(errno=RET.USERERR, errmsg='用户不存在')
+
+    # 2.查询头像url
+    avatar_url = user.avatar_url
+    # 3.查询昵称
+    name = user.name
+    data = {
+        'avatar_url': constants.QINIU_DOMIN_PREFIX + avatar_url,
+        'name': name
+    }
+    # 4.返回ok
+    return jsonify(errno=RET.OK, errmsg='查询成功', data=data)
+
 
 
 @api.route('/user/name', methods=['POST'])
