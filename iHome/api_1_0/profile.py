@@ -8,9 +8,11 @@ from iHome import constants
 from iHome.models import User
 from iHome import db
 from iHome import constants
+from iHome.utils.common import login_require
 
 
 @api.route('/user', methods=['GET'])
+@login_require
 def get_user_info():
     """
     0.校验登录状态:装饰其实现
@@ -43,8 +45,8 @@ def get_user_info():
     return jsonify(errno=RET.OK, errmsg='查询成功', data=data)
 
 
-
 @api.route('/user/name', methods=['POST'])
+@login_require
 def set_user_name():
     """
     1.验证是否登录
@@ -85,6 +87,7 @@ def set_user_name():
 
 
 @api.route('/user/avatar', methods=['POST'])
+@login_require
 def upload_avatar():
     """
     1.TODO 判断是否登录;
@@ -94,7 +97,7 @@ def upload_avatar():
     5.将图片地址拼接到url后,发给前端
     """
 
-    # 1.TODO 判断是否登录;
+    # 1.TOD 判断是否登录;
     # try:
     #     user_id = session.get('user_id')
     #     if not user_id:
