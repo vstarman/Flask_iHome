@@ -9,6 +9,46 @@ from iHome.models import User
 from iHome import db
 
 
+@api.route('/user/name', methods=['POST'])
+def set_user_name():
+    """
+    1.验证是否登录
+    2.获取要设置的用户名,并判空
+    3.取到当前用户id并设置模型
+    4.更新用户名信息到数据库
+    5.返回成功响应
+    :return:
+    """
+    # 1.验证是否登录
+
+    # 2.获取要设置的用户名
+    name = request.json.get('name')
+    if not name:
+        return jsonify(errno=RET.PARAMERR, errmsg='请输入需要设置的名字')
+
+    # 3.取到当前用户id并设置模型
+    try:
+        user = User.query.get(session['user_id'])
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg='查询当前登录用户失败')
+
+    if not user:
+        return jsonify(errno=RET.USERERR, errmsg='用户不存在')
+
+    # 4.更新用户名信息到数据库
+    try:
+        user.name = name
+        db.session.commit()
+    except Exception as e:
+        current_app.logger.error(e)
+        db.session.rollback()
+        return jsonify(errno=RET.DBERR, errmsg='设置用户名到数据库失败')
+
+    # 5.返回成功响应
+    return jsonify(errno=RET.OK, errmsg='用户名设置成功')
+
+
 @api.route('/user/avatar', methods=['POST'])
 def upload_avatar():
     """
@@ -57,6 +97,7 @@ def upload_avatar():
         db.session.commit()
     except Exception as e:
         current_app.logger.error(e)
+        db.session.rollback()
         return jsonify(errno=RET.DBERR, errmsg='保存用户头像失败')
 
     # 4.返回上传成功设为图片地址
