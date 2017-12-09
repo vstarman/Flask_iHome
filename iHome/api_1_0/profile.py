@@ -4,7 +4,6 @@ from . import api
 from flask import session, current_app, jsonify, request
 from iHome.utils.response_code import RET
 from iHome.utils.storage_image import storage_image
-from iHome import constants
 from iHome.models import User
 from iHome import db
 from iHome import constants
@@ -34,15 +33,14 @@ def get_user_info():
         return jsonify(errno=RET.USERERR, errmsg='用户不存在')
 
     # 2.查询头像url
-    avatar_url = user.avatar_url
     # 3.查询昵称
-    name = user.name
-    data = {
-        'avatar_url': constants.QINIU_DOMIN_PREFIX + avatar_url,
-        'name': name
-    }
+    # data = {
+    #     'avatar_url': constants.QINIU_DOMIN_PREFIX + user.avatar_url,
+    #     'name': user.name
+    # }
+
     # 4.返回ok
-    return jsonify(errno=RET.OK, errmsg='查询成功', data=data)
+    return jsonify(errno=RET.OK, errmsg='查询成功', data=user.to_dict())
 
 
 @api.route('/user/name', methods=['POST'])
@@ -82,6 +80,8 @@ def set_user_name():
         db.session.rollback()
         return jsonify(errno=RET.DBERR, errmsg='设置用户名到数据库失败')
 
+    # 设置session
+    session['name'] = name
     # 5.返回成功响应
     return jsonify(errno=RET.OK, errmsg='用户名设置成功')
 

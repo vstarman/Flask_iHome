@@ -42,6 +42,16 @@ class User(BaseModel, db.Model):
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
 
+    def to_dict(self):
+        """为模型增加字典属性,方便传递"""
+        user_dict = {
+            'avatar_url': constants.QINIU_DOMIN_PREFIX + self.avatar_url,
+            'name': self.name,
+            'id': self.id,
+            'mobile': self.mobile,
+        }
+        return user_dict
+
 
 class Area(BaseModel, db.Model):
     """城区"""

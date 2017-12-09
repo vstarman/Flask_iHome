@@ -5,6 +5,7 @@ from . import api
 from iHome import redis_store, db
 from iHome.utils.response_code import RET
 from iHome.models import User
+from iHome.utils.common import login_require
 
 
 @api.route('/users', methods=['POST'])
@@ -101,3 +102,12 @@ def login():
 
     # 4.返回结果
     return jsonify(errno=RET.OK, errmsg='登陆成功')
+
+
+@api.route('/session', methods=['delete'])
+@login_require
+def logout():
+    session.pop('user_name', None)
+    session.pop('user_mobile', None)
+    session.pop('user_id', None)
+    return jsonify(errno=RET.OK, errmsg='登出成功')
