@@ -25,6 +25,8 @@ $(document).ready(function(){
 
     // TODO: 处理房屋基本信息提交的表单数据
 
+
+
     // TODO: 处理图片表单的数据
 
 })
