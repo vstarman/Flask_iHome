@@ -84,7 +84,8 @@ def add_new_house():
     # 3.1 将房屋设施选项为设施表外键,只保存设施id就好
     facility_list = get('facility')
     if facility:
-        Facility.query.filter(facility.id.in_(facility_list)).all()
+        # TODO:???????????
+        Facility.query.filter(Facility.id.in_(facility_list)).all()
     house.facility = facility
 
     # 4.将信息保存到数据库
