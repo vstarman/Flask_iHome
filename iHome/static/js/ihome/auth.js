@@ -33,7 +33,7 @@ $(document).ready(function(){
         }
     })
 
-    // TODO: 管理实名信息表单的提交行为
+    // TOD: 管理实名信息表单的提交行为
     $("#form-auth").submit(function (e) {
         e.preventDefault()
         var real_name = $("#real-name").val()

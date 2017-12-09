@@ -11,12 +11,15 @@ $(document).ready(function(){
     $.get("/api/v1.0/areas", function (resp) {
         if (resp.errno == "0") {
             // 取出数据，遍历添加选项
-            for(var i=0;i<resp.data.areas.length;i++){
-                var areaId = resp.data.areas[i].aid;
-                var areaName = resp.data.areas[i].aname;
-                // 将选项添加到 select 中
-                $("#area-id").append('<option value="'+ areaId +'">' + areaName + '</option>')
-            }
+            // for(var i=0;i<resp.data.areas.length;i++){
+            //     var areaId = resp.data.areas[i].aid;
+            //     var areaName = resp.data.areas[i].aname;
+            //     // 将选项添加到 select 中
+            //     $("#area-id").append('<option value="'+ areaId +'">' + areaName + '</option>')
+            // }
+            // render_template('index.html', data=data)
+            var html = template('areas-tmpl', {'areas': resp.data.areas});
+            $('#area-id').html(html)
         }
     });
 
