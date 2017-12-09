@@ -15,7 +15,7 @@ class RegexConverter(BaseConverter):
 
 
 def login_require(f):
-    @functools.wraps(f)
+    @functools.wraps(f)     # 修饰内层函数,防止装饰器修改内层函数的__name__属性
     def wrapper(*args, **kwargs):
         try:
             user_id = session.get('user_id')
