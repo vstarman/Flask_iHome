@@ -28,7 +28,7 @@ def house_detail(house_id):
         house_dict = redis_store.get('house_detail_%d' % house_id)
         # 如果用户未登录
         if house_dict:
-            return jsonify(errno=RET.OK, errmsg='OK', data={'house_dict': house_dict, 'user_id': user_id})
+            return jsonify(errno=RET.OK, errmsg='OK', data={'house': house_dict, 'user_id': user_id})
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg='从redis中获取房屋详情缓存失败')
@@ -51,7 +51,7 @@ def house_detail(house_id):
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg='缓存设置失败')
 
-    return jsonify(errno=RET.OK, errmsg='OK', data={'house_dict': house_dict, 'user_id': user_id})
+    return jsonify(errno=RET.OK, errmsg='OK', data={'house': house_dict, 'user_id': user_id})
 
 
 @api.route('/house/<int:house_id>/images', methods=["POST"])
