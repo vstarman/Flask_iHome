@@ -11,6 +11,7 @@ from iHome.utils.common import login_require
 
 
 @api.route('/house/<int:house_id>/images', methods=["POST"])
+@login_require
 def upload_house_image(house_id):
     """
     1.接收参数:房屋id和要上穿的图片
@@ -20,7 +21,6 @@ def upload_house_image(house_id):
     :param house_id: 房屋id
     :return:
     """
-
     # 1.接收参数:房屋id和要上穿的图片
     try:
         house_image_file = request.files.get('house_image').read()
@@ -150,7 +150,7 @@ def add_new_house():
         return jsonify(errno=RET.DBERR, errmsg='添加房屋信息失败')
 
     # 5.返回成功响应
-    return jsonify(errno=RET.OK, errmsg='房屋信息添加成功')
+    return jsonify(errno=RET.OK, errmsg='房屋信息添加成功', data={'house_id': house.id})
 
 
 @api.route('/areas')
