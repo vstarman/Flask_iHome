@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 # 房屋信息设置
 from . import api
-from flask import current_app, jsonify, request, g
+from flask import current_app, jsonify, request, g, session
 from iHome.utils.response_code import RET
 from iHome.utils.storage_image import storage_image
 from iHome.models import Area, House, Facility, HouseImage
@@ -16,12 +16,24 @@ def house_detail(house_id):
     需求:
     1.是否是房东,房东则不显示预定按钮
     2.所以需要user_id,传给前段
+    3.查询房屋数据返回
+    4.将房屋信息缓存
     :param house_id:
     :return:
     """
+    # 获取user_id,未登录值设为-1
+    user_id = session.get('user_id', -1)
+    # 4.查询缓存
+    try:
+        house_dict = redis_store.get('house_detail_%d' % house_id)
+        # 如果用户未登录
+        if house_dict:
+            return jsonify(errno=RET.OK, errmsg='OK', data={'house_dict': house_dict, 'user_id': user_id})
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg='从redis中获取房屋详情缓存失败')
+
     # 1.是否是房东,房东则不显示预定按钮
-    # 2.所以需要user_id,转给
-    user_id = g.user_id
     # 3.查询房屋数据返回
     try:
         house = House.query.get(house_id)
@@ -31,8 +43,13 @@ def house_detail(house_id):
     if not house:
         return jsonify(errno=RET.NODATA, errmsg='房屋数据不存在')
     house_dict = house.to_full_dict()
-    if not user_id:
-        return jsonify(errno=RET.SESSIONERR, errmsg='用户未登录', data={'house_dict': house_dict})
+
+    # 4.设置缓存
+    try:
+        redis_store.set('house_detail_%d' % house_id, house_dict, constants.HOUSE_DETAIL_REDIS_EXPIRE_SECOND)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg='缓存设置失败')
 
     return jsonify(errno=RET.OK, errmsg='OK', data={'house_dict': house_dict, 'user_id': user_id})
 
