@@ -3,10 +3,65 @@
 from . import api
 from flask import current_app, jsonify, request, g
 from iHome.utils.response_code import RET
-from iHome.models import Area, House, Facility
+from iHome.utils.storage_image import storage_image
+from iHome.models import Area, House, Facility, HouseImage
 from iHome import db, redis_store
 from iHome import constants
 from iHome.utils.common import login_require
+
+
+@api.route('/house/<int:house_id>/images', methods=["POST"])
+def upload_house_image(house_id):
+    """
+    1.接收参数:房屋id和要上穿的图片
+    2.获取房屋对象
+    3.上传图片
+    4.若没有首页图片,将图片加到房屋对象上,并加入房屋图片表
+    :param house_id: 房屋id
+    :return:
+    """
+
+    # 1.接收参数:房屋id和要上穿的图片
+    try:
+        house_image_file = request.files.get('house_image').read()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.PARAMERR, errmsg='房屋图片参数错误')
+
+    # 2.获取房屋对象
+    try:
+        house = House.query.get(house_id)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg='查询房屋信息失败')
+
+    if not house:
+        return jsonify(errno=RET.NODATA, errmsg='房屋信息不存在')
+
+    # 3.上传图片
+    try:
+        url = storage_image(house_image_file)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.THIRDERR, errmsg='房屋图片上传七牛云失败')
+
+    # 4.若没有首页图片, 将图片加到房屋对象上, 并加入房屋图片表
+    if house.index_image_url == '':
+        house.index_image_url = url
+
+    house_image = HouseImage()
+    house_image.house_id = house_id
+    house_image.url = url
+
+    try:
+        db.session.add(house_image)
+        db.session.commit()
+    except Exception as e:
+        current_app.logger.error(e)
+        db.session.rollback()
+        return jsonify(errno=RET.DBERR, errmsg='保存房屋图片到数据库失败')
+
+    return jsonify(errno=RET.OK, errmsg='OK', data={'url': constants.QINIU_DOMIN_PREFIX + url})
 
 
 @api.route('/house', methods=['POST'])
@@ -50,7 +105,6 @@ def add_new_house():
     deposit = get('deposit')
     min_days = get('min_days')
     max_days = get('max_days')
-    facility = get('facility')
 
     # 2.校验参数
     if not all([title, price, address, area_id, room_count, acreage,
@@ -83,13 +137,12 @@ def add_new_house():
 
     # 3.1 将房屋设施选项为设施表外键,只保存设施id就好
     facility_list = get('facility')
-    if facility:
-        # TODO:???????????
-        Facility.query.filter(Facility.id.in_(facility_list)).all()
-    house.facility = facility
+    if facility_list:
+        house.facilities = Facility.query.filter(Facility.id.in_(facility_list)).all()
 
     # 4.将信息保存到数据库
     try:
+        db.session.add(house)
         db.session.commit()
     except Exception as e:
         current_app.logger.error(e)
