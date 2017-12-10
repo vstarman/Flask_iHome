@@ -10,6 +10,33 @@ from iHome import constants
 from iHome.utils.common import login_require
 
 
+@api.route('/house/<int:house_id>')
+def house_detail(house_id):
+    """房屋详情页
+    需求:
+    1.是否是房东,房东则不显示预定按钮
+    2.所以需要user_id,传给前段
+    :param house_id:
+    :return:
+    """
+    # 1.是否是房东,房东则不显示预定按钮
+    # 2.所以需要user_id,转给
+    user_id = g.user_id
+    # 3.查询房屋数据返回
+    try:
+        house = House.query.get(house_id)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg='查询数据库失败')
+    if not house:
+        return jsonify(errno=RET.NODATA, errmsg='房屋数据不存在')
+    house_dict = house.to_full_dict()
+    if not user_id:
+        return jsonify(errno=RET.SESSIONERR, errmsg='用户未登录', data={'house_dict': house_dict})
+
+    return jsonify(errno=RET.OK, errmsg='OK', data={'house_dict': house_dict, 'user_id': user_id})
+
+
 @api.route('/house/<int:house_id>/images', methods=["POST"])
 @login_require
 def upload_house_image(house_id):

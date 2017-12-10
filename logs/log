@@ -2254,3 +2254,31 @@ DEBUG connectionpool.py:396 http://up.qiniu.com:80 "POST / HTTP/1.1" 200 76
 INFO _internal.py:87 127.0.0.1 - - [10/Dec/2017 17:24:41] "POST /api/v1.0/house/1/images HTTP/1.1" 200 -
 DEBUG connectionpool.py:396 http://up.qiniu.com:80 "POST / HTTP/1.1" 200 76
 INFO _internal.py:87 127.0.0.1 - - [10/Dec/2017 17:24:53] "POST /api/v1.0/house/1/images HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [10/Dec/2017 17:32:09] "GET /detail.html HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [10/Dec/2017 17:32:09] "GET /static/plugins/swiper/css/swiper.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [10/Dec/2017 17:32:09] "GET /static/css/ihome/detail.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [10/Dec/2017 17:32:09] "GET /static/plugins/swiper/js/swiper.jquery.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [10/Dec/2017 17:32:09] "GET /static/js/ihome/detail.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [10/Dec/2017 17:32:10] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [10/Dec/2017 17:32:20] "GET / HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [10/Dec/2017 17:32:20] "GET /static/css/ihome/index.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [10/Dec/2017 17:32:20] "GET /static/images/logo@128x59.png HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [10/Dec/2017 17:32:20] "GET /static/js/ihome/index.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [10/Dec/2017 17:32:21] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [10/Dec/2017 17:32:22] "GET /search.html?aid=&aname=&sd=&ed= HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [10/Dec/2017 17:32:22] "GET /static/css/ihome/search.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [10/Dec/2017 17:32:22] "GET /static/js/ihome/search.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [10/Dec/2017 17:32:23] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [10/Dec/2017 17:32:28] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [10/Dec/2017 17:34:39] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [10/Dec/2017 17:34:41] "GET /index.html HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [10/Dec/2017 17:34:42] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [10/Dec/2017 17:34:47] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/house.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/house.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
