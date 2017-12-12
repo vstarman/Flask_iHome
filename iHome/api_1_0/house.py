@@ -30,10 +30,14 @@ def get_houses_list():
     :return:
     """
     get_arg = request.args.get
+    # 区域id
     aid = get_arg('aid', '')
+    # 入住和离开日期
     sd = get_arg('sd', '')
     ed = get_arg('ed', '')
+    # 排序方式
     sk = get_arg('sk', '')
+    # 第几页
     p = get_arg('p', 1)
 
     # 1.获取所有房屋
@@ -43,7 +47,15 @@ def get_houses_list():
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg='查询数据库失败')
 
-    # 对条件进行判断
+    # 5.将判断条件加入列表
+    house_filter = []
+    if aid:
+        house_filter.append(House.area_id == aid)
+
+    # 6.将查询条件拆包,对对象进行过滤
+    house_query = house_query.filter(*house_filter)
+
+    # 4.对条件进行判断
     if sk == 'new':               # 最新上线
         houses = house_query.order_by(House.create_time.desc())
     elif sk == 'booking':         # 入住最多

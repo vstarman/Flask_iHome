@@ -3839,3 +3839,22 @@ INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 21:00:52] "GET /api/v1.0/house/i
 INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 21:00:52] "GET /api/v1.0/areas HTTP/1.1" 200 -
 INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 21:00:52] "GET /api/v1.0/session HTTP/1.1" 200 -
 INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 21:00:52] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/house.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 21:13:05] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 21:13:05] "GET /api/v1.0/houses?aid=&sd=&ed=&sk=new&p=1 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 21:13:08] "GET /api/v1.0/houses?aid=1&sd=&ed=&sk=new&p=1 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 21:13:12] "GET /api/v1.0/houses?aid=2&sd=&ed=&sk=new&p=1 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 21:13:17] "GET /api/v1.0/houses?aid=4&sd=&ed=&sk=new&p=1 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 21:13:18] "GET /api/v1.0/houses?aid=3&sd=&ed=&sk=new&p=1 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 21:13:19] "GET /api/v1.0/houses?aid=3&sd=&ed=&sk=new&p=2 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 21:13:20] "GET /api/v1.0/houses?aid=3&sd=&ed=&sk=new&p=2 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 21:13:20] "GET /api/v1.0/houses?aid=3&sd=&ed=&sk=new&p=2 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 21:13:20] "GET /api/v1.0/houses?aid=3&sd=&ed=&sk=new&p=2 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 21:13:22] "GET /api/v1.0/houses?aid=5&sd=&ed=&sk=new&p=1 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 21:13:24] "GET /api/v1.0/houses?aid=6&sd=&ed=&sk=new&p=1 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 21:13:26] "GET /api/v1.0/houses?aid=7&sd=&ed=&sk=new&p=1 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 21:13:29] "GET /api/v1.0/houses?aid=15&sd=&ed=&sk=new&p=1 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 21:13:31] "GET /api/v1.0/houses?aid=1&sd=&ed=&sk=new&p=1 HTTP/1.1" 200 -
