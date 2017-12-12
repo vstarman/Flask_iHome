@@ -8,6 +8,19 @@ from iHome.models import User
 from iHome.utils.common import login_require
 
 
+@api.route('/session')
+def check_login():
+    """判断用户有无登录,用来判断是否显示首页右上角登录注册按钮
+    1.获取用户登录状态
+    2.返回用户名和id
+    :return:
+    """
+    # 1.获取用户登录状态
+    user_name = session.get('user_name', '')
+    # 2.返回用户名和id
+    return jsonify(errno=RET.OK, errmsg='OK', data={'user_name': user_name})
+
+
 @api.route('/users', methods=['POST'])
 def register():
     """注册逻辑实现
