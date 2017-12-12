@@ -10,6 +10,34 @@ from iHome import constants
 from iHome.utils.common import login_require
 
 
+@api.route('/houses')
+def get_houses_list():
+    """用来显示搜索出的房屋列表
+    1.获取所有房屋
+    2.将查询集转为字典的列表
+    3.将数据返回
+    :return:
+    """
+
+    # 1.获取所有房屋
+    try:
+        houses = House.query.all()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg='查询数据库失败')
+
+    # 2.将查询集转为字典的列表
+    if houses:
+        house_list = []
+        for house in houses:
+            house_list.append(house.to_basic_dict())
+        print len(house_list)
+        # 3.将数据返回
+        return jsonify(errno=RET.OK, errmsg='OK', data=house_list)
+
+    return jsonify(errno=RET.NODATA, errmsg='无房屋数据')
+
+
 @api.route('/house/index')
 def get_house_index():
     """主页房屋图片幻灯片显示

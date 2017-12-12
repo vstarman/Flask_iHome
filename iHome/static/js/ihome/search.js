@@ -48,6 +48,11 @@ function updateHouseData(action) {
     // http://localhost:5000/search.html?aid=12&aname=%E5%B9%B3%E8%B0%B7%E5%8C%BA&sd=2017-12-27&ed=2017-12-31
     // 需发送给后端的参数:
     // 入住-sd, 退房-ed, 地区-aname, 排序方式-sort, 当前页码
+    // 显示所有房屋信息
+    $.get('/api/v1.0/houses', function (resp) {
+        var houses = resp.data;
+        $('.house-list').html(template('house-list-tmpl', {'houses': houses}))
+    })
 }
 
 $(document).ready(function(){
