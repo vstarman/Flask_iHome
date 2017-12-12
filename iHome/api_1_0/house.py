@@ -9,6 +9,10 @@ from iHome import db, redis_store
 from iHome import constants
 from iHome.utils.common import login_require
 
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
 
 @api.route('/houses')
 def get_houses_list():
@@ -16,24 +20,42 @@ def get_houses_list():
     1.获取所有房屋
     2.将查询集转为字典的列表
     3.将数据返回
+    var params = {
+        aid:areaId,
+        sd:startDate,
+        ed:endDate,
+        sk:sortKey,
+        p:next_page
+    };
     :return:
     """
+    get_arg = request.args.get
+    aid = get_arg('aid', '')
+    sd = get_arg('sd', '')
+    ed = get_arg('ed', '')
+    sk = get_arg('sk', '')
+    p = get_arg('p', 1)
 
     # 1.获取所有房屋
     try:
-        houses = House.query.all()
+        houses = House.query
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg='查询数据库失败')
+
+    # 3.对房屋分页,参数:1->第几页数据,2->每页几条数据,3->是否报404错误
+    paginate = houses.paginate(int(p), constants.HOUSE_LIST_PAGE_CAPACITY, False)
+    # 取出paginate所有对象
+    houses = paginate.items
+    total_page = len(houses)
 
     # 2.将查询集转为字典的列表
     if houses:
         house_list = []
         for house in houses:
             house_list.append(house.to_basic_dict())
-        print len(house_list)
         # 3.将数据返回
-        return jsonify(errno=RET.OK, errmsg='OK', data=house_list)
+        return jsonify(errno=RET.OK, errmsg='OK', data={'houses': house_list, 'total_page': total_page})
 
     return jsonify(errno=RET.NODATA, errmsg='无房屋数据')
 

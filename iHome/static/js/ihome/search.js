@@ -49,11 +49,50 @@ function updateHouseData(action) {
     // 需发送给后端的参数:
     // 入住-sd, 退房-ed, 地区-aname, 排序方式-sort, 当前页码
     // 显示所有房屋信息
-    $.get('/api/v1.0/houses', function (resp) {
-        var houses = resp.data;
-        $('.house-list').html(template('house-list-tmpl', {'houses': houses}))
+    $.get('/api/v1.0/houses', params, function (resp) {
+        house_data_querying = false;
+        if (resp.errno == '0'){
+            total_page = resp.data.total_page;
+            if (total_page == 0){
+                $('.house-list').html('暂无数据')
+            }else {
+                if (action == 'renew'){  // 代表重新加载, 显示第一页
+                    cur_page = 1;
+                    $('.house-list').html(template('house-list-tmpl', {'houses': resp.data.houses}))
+                }else {
+                    cur_page = next_page;
+                    // 显示房屋信息,加载下一页
+                    $('.house-list').append(template('house-list-tmpl', {'houses': resp.data.houses}))
+                }
+
+            }
+        }
     })
 }
+
+//     $.get("/api/v1.0/houses", params, function (resp) {
+//         // 重置是否加载的标识，当前已加载完成
+//         house_data_querying = false;
+//         if (resp.errno == 0) {
+//             // 赋值总页数
+//             total_page = resp.data.total_page
+//
+//             if (total_page == 0) {
+//                 $(".house-list").html("暂无数据")
+//             }else {
+//                 if (action == "renew") {// 代表是重新加载
+//                     cur_page = 1
+//                     // 填充数据
+//                     $(".house-list").html(template("house-list-tmpl", {"houses": resp.data.houses}))
+//                 }else {
+//                     cur_page = next_page;
+//                     $(".house-list").append(template("house-list-tmpl", {"houses": resp.data.houses}))
+//                 }
+//             }
+//         }
+//     })
+// }
+
 
 $(document).ready(function(){
     var queryData = decodeQuery();
@@ -163,4 +202,4 @@ $(document).ready(function(){
             $(".filter-title-bar>.filter-title").eq(2).children("span").eq(0).html($(this).html());
         }
     })
-})
+});
