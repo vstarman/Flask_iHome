@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 # 房屋信息设置
+import datetime
 from . import api
 from flask import current_app, jsonify, request, g, session
 from iHome.utils.response_code import RET
@@ -23,7 +24,7 @@ def get_houses_list():
     var params = {
         aid:areaId,
         sd:startDate,
-        ed:endDate,
+        end_day:endDate,
         sk:sortKey,
         p:next_page
     };
@@ -33,12 +34,13 @@ def get_houses_list():
     # 区域id
     aid = get_arg('aid', '')
     # 入住和离开日期
-    sd = get_arg('sd', '')
-    ed = get_arg('ed', '')
+    start_day = get_arg('sd', '')
+    end_day = get_arg('end_day', '')
     # 排序方式
     sk = get_arg('sk', '')
     # 第几页
-    p = get_arg('p', 1)
+    p = get_arg('p', '1')
+    print p, type(p)
 
     # 1.获取所有房屋
     try:
@@ -46,6 +48,24 @@ def get_houses_list():
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg='查询数据库失败')
+
+    # 7.校验参数  2017-12-12
+    try:
+        if start_day:
+            start_day = datetime.datetime.strptime(start_day, '%Y-%m-%d')
+        if end_day:
+            end_day = datetime.datetime.strptime(end_day, '%Y-%m-%d')
+        if end_day and start_day:
+            assert start_day < end_day, Exception('入住日期不能大于退房日期')
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.PARAMERR, errmsg='日期格式有误')
+    print start_day, end_day
+    try:
+        p = int(p)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.PARAMERR, errmsg='页码参数格式有误')
 
     # 5.将判断条件加入列表
     house_filter = []
@@ -64,6 +84,14 @@ def get_houses_list():
         houses = house_query.order_by(House.price)
     else:                         # 价格 高-低
         houses = house_query.order_by(House.price.desc())
+
+    # 8.添加不同日期条件的过滤规则
+    if start_day and end_day:
+        pass
+    if start_day:
+        pass
+    if end_day:
+        pass
 
     # 3.对房屋分页,参数:1->第几页数据,2->每页几条数据,3->是否报404错误
     paginate = houses.paginate(int(p), constants.HOUSE_LIST_PAGE_CAPACITY, False)
@@ -86,13 +114,13 @@ def get_houses_list():
 def get_house_index():
     """主页房屋图片幻灯片显示
     以订单数量倒叙排序
-    # 1.redis中获取
+    # 1.rend_dayis中获取
     # 2.查询房屋数据
     # 3.数据缓存
     # 4.返回应答
     :return:
     """
-    # 1.redis中获取
+    # 1.rend_dayis中获取
     try:
         houses_list = redis_store.get('index_house_pic')
         if houses_list:
@@ -144,7 +172,7 @@ def house_detail(house_id):
             return jsonify(errno=RET.OK, errmsg='OK', data={'house': house_dict, 'user_id': user_id})
     except Exception as e:
         current_app.logger.error(e)
-        return jsonify(errno=RET.DBERR, errmsg='从redis中获取房屋详情缓存失败')
+        return jsonify(errno=RET.DBERR, errmsg='从rend_dayis中获取房屋详情缓存失败')
 
     # 1.是否是房东,房东则不显示预定按钮
     # 3.查询房屋数据返回
@@ -240,7 +268,7 @@ def add_new_house():
         acreage:1
         unit:1
         capacity:1
-        beds:1
+        bend_days:1
         deposit:1
         min_days:1
         max_days:1
@@ -258,14 +286,14 @@ def add_new_house():
     acreage = get('acreage')
     unit = get('unit')
     capacity = get('capacity')
-    beds = get('beds')
+    bend_days = get('bend_days')
     deposit = get('deposit')
     min_days = get('min_days')
     max_days = get('max_days')
 
     # 2.校验参数
     if not all([title, price, address, area_id, room_count, acreage,
-                unit, capacity, beds, deposit, min_days, max_days]):
+                unit, capacity, bend_days, deposit, min_days, max_days]):
         return jsonify(errno=RET.PARAMERR, errmsg='参数缺失')
 
     # 2.1 将房租和押金16.99等数字转化为整形保存(数据库字段为整形)
@@ -287,7 +315,7 @@ def add_new_house():
     house.acreage = acreage
     house.unit = unit
     house.capacity = capacity
-    house.beds = beds
+    house.bend_days = bend_days
     house.deposit = deposit
     house.min_days = min_days
     house.max_days = max_days
@@ -314,11 +342,11 @@ def add_new_house():
 def get_areas():
     """new_house视图的城区信息获取
     1.获取数据库城区信息
-    2.将城区信息保存到redis中
+    2.将城区信息保存到rend_dayis中
     3.返回响应状态
     :return:
     """
-    # 0.先从redis中获取areas
+    # 0.先从rend_dayis中获取areas
     try:
         areas_list = redis_store.get('areas')
         if areas_list:
@@ -334,12 +362,12 @@ def get_areas():
     for i in areas:
         areas_list.append(i.to_dict())
 
-    # 2.将城区信息保存到redis中
+    # 2.将城区信息保存到rend_dayis中
     try:
         redis_store.set('areas', areas_list, constants.AREA_INFO_REDIS_EXPIRES)
     except Exception as e:
         current_app.logger.error(e)
-        return jsonify(errno=RET.DBERR, errmsg='redis存储城区信息失败')
+        return jsonify(errno=RET.DBERR, errmsg='rend_dayis存储城区信息失败')
 
     # 3.返回响应状态
     return jsonify(errno=RET.OK, errmsg='地区信息发送成功', data={'areas': areas_list})
