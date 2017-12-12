@@ -9,7 +9,7 @@ import functools
 
 class RegexConverter(BaseConverter):
     """自定义正则转换器"""
-    def __init__(self, url_map, *args):
+    def __init__(self, url_map, *args, **kwargs):
         super(RegexConverter, self).__init__(url_map)
         self.regex = args[0]
 

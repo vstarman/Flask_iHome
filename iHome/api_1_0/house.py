@@ -5,14 +5,10 @@ from . import api
 from flask import current_app, jsonify, request, g, session
 from iHome.utils.response_code import RET
 from iHome.utils.storage_image import storage_image
-from iHome.models import Area, House, Facility, HouseImage
+from iHome.models import Area, House, Facility, HouseImage, Order
 from iHome import db, redis_store
 from iHome import constants
 from iHome.utils.common import login_require
-
-import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 
 
 @api.route('/houses')
@@ -30,6 +26,7 @@ def get_houses_list():
     };
     :return:
     """
+    # 1.获取参数
     get_arg = request.args.get
     # 区域id
     aid = get_arg('aid', '')
@@ -40,16 +37,8 @@ def get_houses_list():
     sk = get_arg('sk', '')
     # 第几页
     p = get_arg('p', '1')
-    print p, type(p)
 
-    # 1.获取所有房屋
-    try:
-        house_query = House.query
-    except Exception as e:
-        current_app.logger.error(e)
-        return jsonify(errno=RET.DBERR, errmsg='查询数据库失败')
-
-    # 7.校验参数  2017-12-12
+    # 2.参数校验  2017-12-12
     try:
         if start_day:
             start_day = datetime.datetime.strptime(start_day, '%Y-%m-%d')
@@ -67,44 +56,55 @@ def get_houses_list():
         current_app.logger.error(e)
         return jsonify(errno=RET.PARAMERR, errmsg='页码参数格式有误')
 
-    # 5.将判断条件加入列表
+    # 3.获取房屋查询对象
+    try:
+        house_query = House.query
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg='查询数据库失败')
+
+    # 4.定义过滤列表
     house_filter = []
     if aid:
+        # 4.1 加入地域过滤
         house_filter.append(House.area_id == aid)
 
-    # 6.将查询条件拆包,对对象进行过滤
-    house_query = house_query.filter(*house_filter)
+    # 5.添加日期过滤规则
+    # 5.1找出不符合条件的订单(符合条件的订单难查找)
+    conflict_order = None
+    if start_day and end_day:     # 筛选出与该日期冲突的集合
+        conflict_order = Order.query.filter(Order.begin_date < end_day, Order.end_date > start_day).all()
+    elif start_day:               # 筛选出我入住时,所有还没退房的订单
+        conflict_order = Order.query.filter(Order.end_date > start_day)
+    elif end_day:                 # 筛选出我退房时,所有有人住的订单
+        conflict_order = Order.query.filter(Order.begin_date < end_day)
 
-    # 4.对条件进行判断
-    if sk == 'new':               # 最新上线
-        houses = house_query.order_by(House.create_time.desc())
-    elif sk == 'booking':         # 入住最多
-        houses = house_query.order_by(House.order_count.desc())
-    elif sk == 'price-inc':       # 价格 低-高
-        houses = house_query.order_by(House.price)
-    else:                         # 价格 高-低
-        houses = house_query.order_by(House.price.desc())
+    # 5.2.取到不符合订单的房屋id,取反
+    house_ids = [i.id for i in conflict_order]
+    house_filter.append(Order.id.notin_(house_ids))
 
-    # 8.添加不同日期条件的过滤规则
-    if start_day and end_day:
-        pass
-    if start_day:
-        pass
-    if end_day:
-        pass
+    # 6.根据不同排序方式去查询(解包查询列表)
+    if sk == "booking":
+        house_query = house_query.filter(*house_filter).order_by(House.order_count.desc())
+    elif sk == "price-inc":
+        house_query = house_query.filter(*house_filter).order_by(House.price)
+    elif sk == "price-des":
+        house_query = house_query.filter(*house_filter).order_by(House.price.desc())
+    else:
+        house_query = house_query.filter(*house_filter).order_by(House.create_time.desc())
 
-    # 3.对房屋分页,参数:1->第几页数据,2->每页几条数据,3->是否报404错误
-    paginate = houses.paginate(int(p), constants.HOUSE_LIST_PAGE_CAPACITY, False)
-    # 取出paginate所有对象
+    # 7.对房屋分页,参数:1->第几页数据,2->每页几条数据,3->是否报404错误
+    paginate = house_query.paginate(p, constants.HOUSE_LIST_PAGE_CAPACITY, False)
+    # 7.1取出paginate所有对象
     houses = paginate.items
     total_page = len(houses)
 
-    # 2.将查询集转为字典的列表
+    # 7.2.将对象集转为字典的列表
     if houses:
         house_list = []
         for house in houses:
             house_list.append(house.to_basic_dict())
-        # 3.将数据返回
+        # 8.将数据返回
         return jsonify(errno=RET.OK, errmsg='OK', data={'houses': house_list, 'total_page': total_page})
 
     return jsonify(errno=RET.NODATA, errmsg='无房屋数据')
