@@ -1,10 +1,10 @@
 # -*- coding:utf-8 -*-
 from qiniu import Auth, put_data
 
-access_key = "yV4GmNBLOgQK-1Sn3o4jktGLFdFSrlywR2C-hvsW"
-secret_key = "bixMURPL6tHjrb8QKVg2tm7n9k8C7vaOeQ4MEoeW"
+access_key = 'V_xlJjJOVoTYzXpuY0dKH1s1SF2m5ITXzIqcxwib'
+secret_key = 'HuNmaIzEabXHBV97VO6Gcmo9ZuQLFW93_yKLxh0a'
 
-bucket_name = "ihome"
+bucket_name = 'flaskprojects'
 
 
 def storage_image(data):

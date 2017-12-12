@@ -97,15 +97,8 @@ def get_user_info():
     if not user:
         return jsonify(errno=RET.USERERR, errmsg='用户不存在')
 
-    # 2.查询头像url
-    # 3.查询昵称
-    # data = {
-    #     'avatar_url': constants.QINIU_DOMIN_PREFIX + user.avatar_url,
-    #     'name': user.name
-    # }
-
     # 4.返回ok
-    return jsonify(errno=RET.OK, errmsg='查询成功', data=user.to_dict())
+    return jsonify(errno=RET.OK, errmsg='查询成功', data=user.to_auth_dict())
 
 
 @api.route('/user/name', methods=['POST'])

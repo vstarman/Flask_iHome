@@ -2563,3 +2563,568 @@ INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 14:58:50] "GET /static/js/ihome/
 INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 14:58:51] "POST /api/v1.0/session HTTP/1.1" 200 -
 INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 14:58:52] "GET /api/v1.0/session HTTP/1.1" 200 -
 INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 14:58:52] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:03:48] "GET /detail.html/1 HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:03:52] "GET /detail/1 HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:03:59] "GET /house/1 HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:04:15] "GET /api/v1.0house/1 HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:04:19] "GET /api/v1.0/house/1 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:04:28] "GET /api/v1.0/house/9 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:04:57] "GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:04:58] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:05:01] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:05:07] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/house.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/house.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/house.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/house.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/house.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:56:05] "GET / HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:56:05] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:56:05] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:56:05] "GET /static/css/reset.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:56:05] "GET /static/plugins/swiper/css/swiper.min.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:56:05] "GET /static/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:56:05] "GET /static/css/ihome/main.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:56:05] "GET /static/css/ihome/index.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:56:05] "GET /static/js/jquery.min.js HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:56:05] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:56:05] "GET /static/plugins/swiper/js/swiper.jquery.min.js HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:56:05] "GET /static/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:56:05] "GET /static/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:56:05] "GET /static/js/template.js HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:56:05] "GET /static/js/ihome/index.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:56:05] "GET /static/images/logo@128x59.png HTTP/1.1" 304 -
+ERROR house.py:35 filter_by() takes exactly 1 argument (2 given)
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:56:06] "GET /api/v1.0/house/index HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:56:06] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:56:06] "GET /favicon.ico HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:56:32] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:56:44] "GET / HTTP/1.1" 304 -
+ERROR house.py:35 filter_by() takes exactly 1 argument (2 given)
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:56:44] "GET /api/v1.0/house/index HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:56:45] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 15:56:45] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/house.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:01:01] "GET / HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:01:51] "GET /api/v1.0/house/index HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:04:55] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:04:55] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:04:59] "GET / HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:05:00] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:05:00] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:05:00] "GET /static/css/reset.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:05:00] "GET /static/plugins/swiper/css/swiper.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:05:00] "GET /static/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:05:00] "GET /static/css/ihome/main.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:05:00] "GET /static/css/ihome/index.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:05:01] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:05:01] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:05:01] "GET /static/plugins/swiper/js/swiper.jquery.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:05:01] "GET /static/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:05:01] "GET /static/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:05:01] "GET /static/js/template.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:05:02] "GET /static/js/ihome/index.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:05:02] "GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:05:02] "GET /static/plugins/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:05:02] "GET /static/images/logo@128x59.png HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:05:02] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:05:13] "GET /api/v1.0/house/index HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:05:14] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:19:53] "GET / HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:19:54] "GET /api/v1.0/house/index HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:19:55] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:19:55] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:19:59] "GET / HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:20:00] "GET /api/v1.0/house/index HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:20:00] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:20:00] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:20:24] "GET /register.html HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:20:24] "GET /static/css/ihome/register.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:20:24] "GET /static/js/ihome/register.js?v=4 HTTP/1.1" 200 -
+DEBUG verify.py:104 URLF
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:20:25] "GET /api/v1.0/imagecode?cur=f733b034-1a09-4610-8dfc-5ce199b768f2&pre= HTTP/1.1" 200 -
+DEBUG verify.py:67 短信验证码: 550832
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:21:09] "POST /api/v1.0/sms HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:21:25] "POST /api/v1.0/users HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:21:25] "GET /login.html HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:21:25] "GET /static/css/ihome/login.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:21:25] "GET /static/js/ihome/login.js HTTP/1.1" 200 -
+DEBUG verify.py:104 RTPS
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:21:44] "GET /api/v1.0/imagecode?cur=e8da6cad-ebc6-4cfe-adf6-2be8f76048a6&pre= HTTP/1.1" 200 -
+DEBUG verify.py:67 短信验证码: 720906
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:21:55] "POST /api/v1.0/sms HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:22:12] "POST /api/v1.0/users HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:22:24] "POST /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:22:25] "GET /index.html HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:22:25] "GET /api/v1.0/house/index HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:22:25] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:22:26] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:22:31] "GET /newhouse.html HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:22:31] "GET /static/css/ihome/newhouse.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:22:31] "GET /static/js/jquery.form.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:22:31] "GET /static/js/ihome/newhouse.js?v=3 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:22:32] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:22:34] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:25:04] "POST /api/v1.0/house HTTP/1.1" 200 -
+DEBUG connectionpool.py:824 Starting new HTTPS connection (1): uc.qbox.me
+DEBUG connectionpool.py:396 https://uc.qbox.me:443 "GET /v1/query?ak=yV4GmNBLOgQK-1Sn3o4jktGLFdFSrlywR2C-hvsW&bucket=ihome HTTP/1.1" 200 239
+DEBUG retry.py:200 Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG connectionpool.py:208 Starting new HTTP connection (1): up.qiniu.com
+DEBUG connectionpool.py:396 http://up.qiniu.com:80 "POST / HTTP/1.1" 200 76
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:25:59] "POST /api/v1.0/house/1/images HTTP/1.1" 200 -
+DEBUG connectionpool.py:396 http://up.qiniu.com:80 "POST / HTTP/1.1" 200 76
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:26:50] "POST /api/v1.0/house/1/images HTTP/1.1" 200 -
+DEBUG connectionpool.py:396 http://up.qiniu.com:80 "POST / HTTP/1.1" 200 76
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:27:54] "POST /api/v1.0/house/1/images HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/constants.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/utils/storage_image.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+DEBUG connectionpool.py:824 Starting new HTTPS connection (1): uc.qbox.me
+DEBUG connectionpool.py:396 https://uc.qbox.me:443 "GET /v1/query?ak=V_xlJjJOVoTYzXpuY0dKH1s1SF2m5ITXzIqcxwib&bucket=flaskprojects HTTP/1.1" 200 261
+DEBUG retry.py:200 Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG connectionpool.py:208 Starting new HTTP connection (1): up-z1.qiniu.com
+DEBUG connectionpool.py:396 http://up-z1.qiniu.com:80 "POST / HTTP/1.1" 200 76
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:31:56] "POST /api/v1.0/house/1/images HTTP/1.1" 200 -
+DEBUG connectionpool.py:396 http://up-z1.qiniu.com:80 "POST / HTTP/1.1" 200 76
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:32:10] "POST /api/v1.0/house/1/images HTTP/1.1" 200 -
+DEBUG connectionpool.py:396 http://up-z1.qiniu.com:80 "POST / HTTP/1.1" 200 76
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:32:34] "POST /api/v1.0/house/1/images HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:32:38] "GET /myhouse.html HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:32:38] "GET /static/css/ihome/myhouse.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:32:38] "GET /static/js/ihome/myhouse.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:32:42] "GET /auth.html HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:32:42] "GET /static/css/ihome/profile.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:32:42] "GET /static/js/ihome/auth.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:32:43] "GET /api/v1.0/user/auth HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:32:52] "POST /api/v1.0/user/auth HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:32:55] "GET /my.html HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:32:55] "GET /static/css/ihome/my.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:32:55] "GET /static/js/ihome/my.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:33:00] "GET /api/v1.0/house/index HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:33:01] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:33:01] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:33:09] "GET /profile.html HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:33:09] "GET /static/js/ihome/profile.js?v=5 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:33:10] "GET /api/v1.0/user HTTP/1.1" 500 -
+ERROR profile.py:177 'NoneType' object has no attribute 'read'
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:33:13] "POST /api/v1.0/user/avatar HTTP/1.1" 200 -
+DEBUG connectionpool.py:396 http://up-z1.qiniu.com:80 "POST / HTTP/1.1" 200 76
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:33:25] "POST /api/v1.0/user/avatar HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:33:26] "GET /api/v1.0/user HTTP/1.1" 500 -
+DEBUG connectionpool.py:396 http://up-z1.qiniu.com:80 "POST / HTTP/1.1" 200 76
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:34:02] "POST /api/v1.0/user/avatar HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:34:03] "GET /api/v1.0/user HTTP/1.1" 500 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:34:19] "POST /api/v1.0/user/name HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:34:20] "GET /api/v1.0/user HTTP/1.1" 500 -
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/profile.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:36:51] "GET /api/v1.0/house/index HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:36:51] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:36:51] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:36:56] "GET /api/v1.0/house/index HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:36:56] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:36:56] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/house.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:37:57] "GET / HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:37:58] "GET /api/v1.0/house/index HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:37:58] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:37:58] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:41:59] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:43:09] "POST /api/v1.0/house HTTP/1.1" 200 -
+DEBUG retry.py:200 Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG connectionpool.py:208 Starting new HTTP connection (1): up-z1.qiniu.com
+DEBUG connectionpool.py:396 http://up-z1.qiniu.com:80 "POST / HTTP/1.1" 200 76
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:43:28] "POST /api/v1.0/house/2/images HTTP/1.1" 200 -
+DEBUG connectionpool.py:396 http://up-z1.qiniu.com:80 "POST / HTTP/1.1" 200 76
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:43:35] "POST /api/v1.0/house/2/images HTTP/1.1" 200 -
+DEBUG connectionpool.py:396 http://up-z1.qiniu.com:80 "POST / HTTP/1.1" 200 76
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:43:53] "POST /api/v1.0/house/2/images HTTP/1.1" 200 -
+DEBUG connectionpool.py:396 http://up-z1.qiniu.com:80 "POST / HTTP/1.1" 200 76
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:43:56] "POST /api/v1.0/house/2/images HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:44:08] "GET /api/v1.0/house/index HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:44:08] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:44:08] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:44:14] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:44:16] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:44:29] "GET /api/v1.0/user/auth HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:45:06] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:45:52] "POST /api/v1.0/house HTTP/1.1" 200 -
+DEBUG connectionpool.py:243 Resetting dropped connection: up-z1.qiniu.com
+DEBUG connectionpool.py:208 Starting new HTTP connection (1): upload-z1.qiniu.com
+ERROR house.py:130 七牛云上传文件失败
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:47:02] "POST /api/v1.0/house/3/images HTTP/1.1" 200 -
+ERROR _internal.py:87 Error on request:
+Traceback (most recent call last):
+  File "/home/python/.virtualenvs/Flask_py/lib/python2.7/site-packages/werkzeug/serving.py", line 209, in run_wsgi
+    execute(self.server.app)
+  File "/home/python/.virtualenvs/Flask_py/lib/python2.7/site-packages/werkzeug/serving.py", line 200, in execute
+    write(data)
+  File "/home/python/.virtualenvs/Flask_py/lib/python2.7/site-packages/werkzeug/serving.py", line 168, in write
+    self.send_header(key, value)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 412, in send_header
+    self.wfile.write("%s: %s\r\n" % (keyword, value))
+IOError: [Errno 32] Broken pipe
+DEBUG connectionpool.py:208 Starting new HTTP connection (2): up-z1.qiniu.com
+DEBUG connectionpool.py:396 http://up-z1.qiniu.com:80 "POST / HTTP/1.1" 200 76
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:47:25] "POST /api/v1.0/house/3/images HTTP/1.1" 200 -
+ERROR _internal.py:87 Error on request:
+Traceback (most recent call last):
+  File "/home/python/.virtualenvs/Flask_py/lib/python2.7/site-packages/werkzeug/serving.py", line 209, in run_wsgi
+    execute(self.server.app)
+  File "/home/python/.virtualenvs/Flask_py/lib/python2.7/site-packages/werkzeug/serving.py", line 200, in execute
+    write(data)
+  File "/home/python/.virtualenvs/Flask_py/lib/python2.7/site-packages/werkzeug/serving.py", line 168, in write
+    self.send_header(key, value)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 412, in send_header
+    self.wfile.write("%s: %s\r\n" % (keyword, value))
+IOError: [Errno 32] Broken pipe
+DEBUG connectionpool.py:396 http://up-z1.qiniu.com:80 "POST / HTTP/1.1" 200 76
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:47:26] "POST /api/v1.0/house/3/images HTTP/1.1" 200 -
+ERROR _internal.py:87 Error on request:
+Traceback (most recent call last):
+  File "/home/python/.virtualenvs/Flask_py/lib/python2.7/site-packages/werkzeug/serving.py", line 209, in run_wsgi
+    execute(self.server.app)
+  File "/home/python/.virtualenvs/Flask_py/lib/python2.7/site-packages/werkzeug/serving.py", line 200, in execute
+    write(data)
+  File "/home/python/.virtualenvs/Flask_py/lib/python2.7/site-packages/werkzeug/serving.py", line 168, in write
+    self.send_header(key, value)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 412, in send_header
+    self.wfile.write("%s: %s\r\n" % (keyword, value))
+IOError: [Errno 32] Broken pipe
+DEBUG connectionpool.py:396 http://up-z1.qiniu.com:80 "POST / HTTP/1.1" 200 76
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:47:38] "POST /api/v1.0/house/3/images HTTP/1.1" 200 -
+ERROR _internal.py:87 Error on request:
+Traceback (most recent call last):
+  File "/home/python/.virtualenvs/Flask_py/lib/python2.7/site-packages/werkzeug/serving.py", line 209, in run_wsgi
+    execute(self.server.app)
+  File "/home/python/.virtualenvs/Flask_py/lib/python2.7/site-packages/werkzeug/serving.py", line 200, in execute
+    write(data)
+  File "/home/python/.virtualenvs/Flask_py/lib/python2.7/site-packages/werkzeug/serving.py", line 168, in write
+    self.send_header(key, value)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 412, in send_header
+    self.wfile.write("%s: %s\r\n" % (keyword, value))
+IOError: [Errno 32] Broken pipe
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:47:38] "GET /api/v1.0/house/index HTTP/1.1" 200 -
+ERROR _internal.py:87 Error on request:
+Traceback (most recent call last):
+  File "/home/python/.virtualenvs/Flask_py/lib/python2.7/site-packages/werkzeug/serving.py", line 209, in run_wsgi
+    execute(self.server.app)
+  File "/home/python/.virtualenvs/Flask_py/lib/python2.7/site-packages/werkzeug/serving.py", line 200, in execute
+    write(data)
+  File "/home/python/.virtualenvs/Flask_py/lib/python2.7/site-packages/werkzeug/serving.py", line 168, in write
+    self.send_header(key, value)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 412, in send_header
+    self.wfile.write("%s: %s\r\n" % (keyword, value))
+IOError: [Errno 32] Broken pipe
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:47:38] "GET /api/v1.0/session HTTP/1.1" 200 -
+ERROR _internal.py:87 Error on request:
+Traceback (most recent call last):
+  File "/home/python/.virtualenvs/Flask_py/lib/python2.7/site-packages/werkzeug/serving.py", line 209, in run_wsgi
+    execute(self.server.app)
+  File "/home/python/.virtualenvs/Flask_py/lib/python2.7/site-packages/werkzeug/serving.py", line 200, in execute
+    write(data)
+  File "/home/python/.virtualenvs/Flask_py/lib/python2.7/site-packages/werkzeug/serving.py", line 168, in write
+    self.send_header(key, value)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 412, in send_header
+    self.wfile.write("%s: %s\r\n" % (keyword, value))
+IOError: [Errno 32] Broken pipe
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:47:38] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:47:39] "DELETE /api/v1.0/session HTTP/1.1" 200 -
+ERROR _internal.py:87 Error on request:
+Traceback (most recent call last):
+  File "/home/python/.virtualenvs/Flask_py/lib/python2.7/site-packages/werkzeug/serving.py", line 209, in run_wsgi
+    execute(self.server.app)
+  File "/home/python/.virtualenvs/Flask_py/lib/python2.7/site-packages/werkzeug/serving.py", line 200, in execute
+    write(data)
+  File "/home/python/.virtualenvs/Flask_py/lib/python2.7/site-packages/werkzeug/serving.py", line 168, in write
+    self.send_header(key, value)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 412, in send_header
+    self.wfile.write("%s: %s\r\n" % (keyword, value))
+IOError: [Errno 32] Broken pipe
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:47:39] "DELETE /api/v1.0/session HTTP/1.1" 200 -
+ERROR _internal.py:87 Error on request:
+Traceback (most recent call last):
+  File "/home/python/.virtualenvs/Flask_py/lib/python2.7/site-packages/werkzeug/serving.py", line 209, in run_wsgi
+    execute(self.server.app)
+  File "/home/python/.virtualenvs/Flask_py/lib/python2.7/site-packages/werkzeug/serving.py", line 200, in execute
+    write(data)
+  File "/home/python/.virtualenvs/Flask_py/lib/python2.7/site-packages/werkzeug/serving.py", line 168, in write
+    self.send_header(key, value)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 412, in send_header
+    self.wfile.write("%s: %s\r\n" % (keyword, value))
+IOError: [Errno 32] Broken pipe
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:47:39] "DELETE /api/v1.0/session HTTP/1.1" 200 -
+ERROR _internal.py:87 Error on request:
+Traceback (most recent call last):
+  File "/home/python/.virtualenvs/Flask_py/lib/python2.7/site-packages/werkzeug/serving.py", line 209, in run_wsgi
+    execute(self.server.app)
+  File "/home/python/.virtualenvs/Flask_py/lib/python2.7/site-packages/werkzeug/serving.py", line 200, in execute
+    write(data)
+  File "/home/python/.virtualenvs/Flask_py/lib/python2.7/site-packages/werkzeug/serving.py", line 168, in write
+    self.send_header(key, value)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 412, in send_header
+    self.wfile.write("%s: %s\r\n" % (keyword, value))
+IOError: [Errno 32] Broken pipe
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:47:39] "DELETE /api/v1.0/session HTTP/1.1" 200 -
+ERROR _internal.py:87 Error on request:
+Traceback (most recent call last):
+  File "/home/python/.virtualenvs/Flask_py/lib/python2.7/site-packages/werkzeug/serving.py", line 209, in run_wsgi
+    execute(self.server.app)
+  File "/home/python/.virtualenvs/Flask_py/lib/python2.7/site-packages/werkzeug/serving.py", line 200, in execute
+    write(data)
+  File "/home/python/.virtualenvs/Flask_py/lib/python2.7/site-packages/werkzeug/serving.py", line 168, in write
+    self.send_header(key, value)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 412, in send_header
+    self.wfile.write("%s: %s\r\n" % (keyword, value))
+IOError: [Errno 32] Broken pipe
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:47:39] "DELETE /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:47:39] "GET /api/v1.0/house/index HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:47:39] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:47:41] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/passport.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO csrf.py:251 The CSRF token is missing.
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:51:21] "POST /api/v1.0/session HTTP/1.1" 400 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:51:34] "GET /login.html HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:08] "GET /login.html HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:08] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:08] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:08] "GET /static/css/reset.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:08] "GET /static/css/ihome/main.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:08] "GET /static/css/ihome/login.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:08] "GET /static/images/logo@128x59.png HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:08] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:08] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:08] "GET /static/js/ihome/login.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:08] "GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:09] "GET /static/plugins/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:16] "POST /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:16] "GET /index.html HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:16] "GET /static/plugins/swiper/css/swiper.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:16] "GET /static/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:16] "GET /static/css/ihome/index.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:16] "GET /static/plugins/swiper/js/swiper.jquery.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:17] "GET /static/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:17] "GET /static/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:17] "GET /static/js/template.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:17] "GET /static/js/ihome/index.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:17] "GET /api/v1.0/house/index HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:17] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:18] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:23] "GET /my.html HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:23] "GET /static/css/ihome/my.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:23] "GET /static/js/ihome/my.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:26] "GET /myhouse.html HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:26] "GET /static/css/ihome/myhouse.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:26] "GET /static/js/ihome/myhouse.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:27] "GET /auth.html HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:27] "GET /static/css/ihome/profile.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:27] "GET /static/js/jquery.form.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:27] "GET /static/js/ihome/auth.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:28] "GET /api/v1.0/user/auth HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:35] "POST /api/v1.0/user/auth HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:54] "GET /profile.html HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:54] "GET /static/js/ihome/profile.js?v=5 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:52:54] "GET /api/v1.0/user HTTP/1.1" 500 -
+DEBUG retry.py:200 Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG connectionpool.py:208 Starting new HTTP connection (1): up-z1.qiniu.com
+DEBUG connectionpool.py:396 http://up-z1.qiniu.com:80 "POST / HTTP/1.1" 200 76
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:53:10] "POST /api/v1.0/user/avatar HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:53:11] "GET /api/v1.0/user HTTP/1.1" 500 -
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/profile.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/profile.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:57:16] "GET /profile.html HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:57:17] "GET /api/v1.0/user HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:57:51] "POST /api/v1.0/user/name HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 16:57:52] "GET /api/v1.0/user HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:07:11] "GET /my.html HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:07:11] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:07:11] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:07:11] "GET /static/css/reset.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:07:11] "GET /static/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:07:11] "GET /static/css/ihome/main.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:07:11] "GET /static/css/ihome/my.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:07:11] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:07:11] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:07:11] "GET /static/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:07:11] "GET /static/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:07:11] "GET /static/js/ihome/my.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:07:11] "GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:07:12] "GET /static/plugins/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:07:12] "GET /api/1.0/user HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:07:55] "GET /my.html HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:07:55] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:07:55] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:07:55] "GET /static/css/reset.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:07:55] "GET /static/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:07:55] "GET /static/css/ihome/main.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:07:55] "GET /static/css/ihome/my.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:07:55] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:07:55] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:07:55] "GET /static/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:07:55] "GET /static/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:07:55] "GET /static/js/ihome/my.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:07:55] "GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:07:56] "GET /static/plugins/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:07:56] "GET /api/v1.0/user HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:08:42] "GET / HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:08:42] "GET /static/plugins/swiper/css/swiper.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:08:42] "GET /static/css/ihome/index.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:08:42] "GET /static/images/logo@128x59.png HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:08:42] "GET /static/plugins/swiper/js/swiper.jquery.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:08:42] "GET /static/js/template.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:08:42] "GET /static/js/ihome/index.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:08:43] "GET /api/v1.0/house/index HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:08:43] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:08:43] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/house.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:15:33] "GET / HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:15:34] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:15:34] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:15:34] "GET /static/css/reset.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:15:34] "GET /static/plugins/swiper/css/swiper.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:15:34] "GET /static/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:15:34] "GET /static/css/ihome/main.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:15:34] "GET /static/css/ihome/index.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:15:34] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:15:34] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:15:34] "GET /static/plugins/swiper/js/swiper.jquery.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:15:34] "GET /static/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:15:34] "GET /static/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:15:34] "GET /static/js/template.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:15:34] "GET /static/js/ihome/index.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:15:34] "GET /static/images/logo@128x59.png HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:15:34] "GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:15:35] "GET /static/plugins/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:15:35] "GET /api/v1.0/house/index HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:15:35] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:15:35] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/house.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:17:50] "GET / HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:17:51] "GET /api/v1.0/house/index HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:17:52] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:17:52] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/house.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:20:57] "GET / HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:20:57] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:20:57] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:20:57] "GET /static/css/reset.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:20:57] "GET /static/plugins/swiper/css/swiper.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:20:57] "GET /static/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:20:57] "GET /static/css/ihome/main.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:20:57] "GET /static/css/ihome/index.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:20:57] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:20:57] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:20:57] "GET /static/plugins/swiper/js/swiper.jquery.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:20:57] "GET /static/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:20:57] "GET /static/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:20:57] "GET /static/js/template.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:20:57] "GET /static/js/ihome/index.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:20:57] "GET /static/images/logo@128x59.png HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:20:57] "GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:20:58] "GET /static/plugins/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:20:58] "GET /api/v1.0/house/index HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:20:58] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:20:58] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:23:42] "GET / HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:23:42] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:23:42] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:23:42] "GET /static/css/reset.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:23:42] "GET /static/plugins/swiper/css/swiper.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:23:42] "GET /static/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:23:42] "GET /static/css/ihome/main.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:23:42] "GET /static/css/ihome/index.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:23:42] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:23:42] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:23:42] "GET /static/plugins/swiper/js/swiper.jquery.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:23:43] "GET /static/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:23:43] "GET /static/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:23:43] "GET /static/js/template.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:23:43] "GET /static/js/ihome/index.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:23:43] "GET /static/images/logo@128x59.png HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:23:43] "GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:23:43] "GET /static/plugins/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:23:44] "GET /api/v1.0/house/index HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:23:44] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:23:44] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/house.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:24:10] "GET /login.html HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:24:10] "GET /static/css/ihome/login.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:24:10] "GET /static/js/ihome/login.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:24:12] "POST /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:24:12] "GET /index.html HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:24:13] "GET /api/v1.0/house/index HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:24:13] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:24:13] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:24:21] "GET /index.html HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:24:22] "GET /api/v1.0/house/index HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:24:22] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:24:22] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/house.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:25:47] "GET /index.html HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:25:48] "GET /api/v1.0/house/index HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:25:48] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [12/Dec/2017 17:25:48] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -

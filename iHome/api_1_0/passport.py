@@ -117,7 +117,7 @@ def login():
     return jsonify(errno=RET.OK, errmsg='登陆成功')
 
 
-@api.route('/session', methods=['delete'])
+@api.route('/session', methods=['DELETE'])
 @login_require
 def logout():
     session.pop('user_name', None)

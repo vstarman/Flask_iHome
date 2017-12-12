@@ -10,6 +10,47 @@ from iHome import constants
 from iHome.utils.common import login_require
 
 
+@api.route('/house/index')
+def get_house_index():
+    """主页房屋图片幻灯片显示
+    以订单数量倒叙排序
+    # 1.redis中获取
+    # 2.查询房屋数据
+    # 3.数据缓存
+    # 4.返回应答
+    :return:
+    """
+    # 1.redis中获取
+    try:
+        houses_list = redis_store.get('index_house_pic')
+        if houses_list:
+            return jsonify(errno=RET.OK, errmsg='OK', data=eval(houses_list))
+    except Exception as e:
+        current_app.logger.error(e)
+
+    # 2.查询房屋数据
+    try:
+        houses = House.query.order_by(House.order_count.desc()).limit(constants.HOME_PAGE_MAX_HOUSES).all()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg='查询数据失败')
+
+    # 将对象集合转为字典列表
+    houses_list = []
+    if houses:
+        for house in houses:
+            houses_list.append(house.to_basic_dict())
+        # print '-'*50, len(houses_list)
+        # 3.数据缓存
+        try:
+            redis_store.set('index_house_pic', houses_list, constants.HOME_PAGE_DATA_REDIS_EXPIRES)
+        except Exception as e:
+            current_app.logger.error(e)
+
+    # 4.返回应答
+    return jsonify(errno=RET.OK, errmsg='OK', data=houses_list)
+
+
 @api.route('/house/<int:house_id>')
 def house_detail(house_id):
     """房屋详情页
