@@ -56,6 +56,15 @@ def get_houses_list():
         current_app.logger.error(e)
         return jsonify(errno=RET.PARAMERR, errmsg='页码参数格式有误')
 
+    # 0.从redis中获取缓存
+    try:
+        h_key = 'house_list_%s_%s_%s_%s' % (aid, start_day, end_day, sk)
+        data_dict = redis_store.hget(h_key, p)
+        if data_dict:
+            return jsonify(errno=RET.OK, errmsg='OK', data=data_dict)
+    except Exception as e:
+        current_app.logger.error(e)
+
     # 3.获取房屋查询对象
     try:
         house_query = House.query
@@ -100,14 +109,32 @@ def get_houses_list():
     total_page = len(houses)
 
     # 7.2.将对象集转为字典的列表
-    if houses:
-        house_list = []
-        for house in houses:
-            house_list.append(house.to_basic_dict())
-        # 8.将数据返回
-        return jsonify(errno=RET.OK, errmsg='OK', data={'houses': house_list, 'total_page': total_page})
+    house_list = []
+    for house in houses:
+        house_list.append(house.to_basic_dict())
 
-    return jsonify(errno=RET.NODATA, errmsg='无房屋数据')
+    # 7.3 响应的字典
+    data_dict = {'houses': house_list, 'total_page': total_page}
+
+    # 8.添加缓存:Todo????????
+    if p <= total_page:    # 当前页如果小于或等于总页数,再去存
+        try:
+            h_key = 'house_list_%s_%s_%s_%s' % (aid, start_day, end_day, sk)
+            # 获取端到操作对象
+            pipe = redis_store.pipeline()
+            # 开启事务
+            pipe.multi()
+            # 设置数据
+            pipe.hset(h_key, p, house_list)
+            # 指定key过期时间
+            pipe.expire(h_key, constants.HOUSE_LIST_REDIS_EXPIRES)
+            # 提交事务
+            pipe.execute()
+        except Exception as e:
+            current_app.logger.error(e)
+
+    # 9.将数据返回
+    return jsonify(errno=RET.OK, errmsg='OK', data=data_dict)
 
 
 @api.route('/house/index')
