@@ -21,7 +21,9 @@ function setStartDate() {
         $("#end-date").datepicker({
             language: "zh-CN",
             keyboardNavigation: false,
-            startDate: startDate,
+            // startDate: startDate,
+            // 将对象转为时间戳,＋一天毫秒数,再转回对象
+            startDate: new Date(Date.parse(startDate) + 86400000),
             format: "yyyy-mm-dd"
         });
         $("#end-date").on("changeDate", function() {
@@ -90,14 +92,19 @@ $(document).ready(function(){
 
 
 
-    // TODO: 获取城区信息,获取完毕之后需要设置城区按钮点击之后相关操作
-
-    // TODO: 城区按钮点击之后相关操作
-    $(".area-list a").click(function(e){
-        $("#area-btn").html($(this).html());
-        $(".search-btn").attr("area-id", $(this).attr("area-id"));
-        $(".search-btn").attr("area-name", $(this).html());
-        $("#area-modal").modal("hide");
+    // TOD: 获取城区信息,获取完毕之后需要设置城区按钮点击之后相关操作
+    $.get("/api/v1.0/areas", function (resp) {
+        if (resp.errno == "0") {
+            var html = template('area-list-tmpl', {'areas': resp.data.areas});
+            $('.area-list').html(html)
+            // TOD: 城区按钮点击之后相关操作
+            $(".area-list a").click(function(e){
+                $("#area-btn").html($(this).html());
+                $(".search-btn").attr("area-id", $(this).attr("area-id"));
+                $(".search-btn").attr("area-name", $(this).html());
+                $("#area-modal").modal("hide");
+            });
+        }
     });
 
     $('.modal').on('show.bs.modal', centerModals);      //当模态框出现的时候
