@@ -18,7 +18,17 @@ function logout() {
 }
 
 $(document).ready(function(){
-
-    // TODO: 在页面加载完毕之后去加载个人信息
-
+    // 页面加载完毕,显示用户信息
+    $.ajax({
+        url: '/api/v1.0/user',
+        type: 'get',
+        headers: {
+            'X_CSRFToken': getCookie('csrf_token')
+        },
+        success: function (resp) {
+            $('#user-avatar').attr('src', resp.data.avatar_url);
+            $('#user-name').html(resp.data.name);
+            $('#user-mobile').html(resp.data.mobile)
+        }
+    })
 });
