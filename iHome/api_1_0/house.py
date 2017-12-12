@@ -38,10 +38,20 @@ def get_houses_list():
 
     # 1.获取所有房屋
     try:
-        houses = House.query
+        house_query = House.query
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg='查询数据库失败')
+
+    # 对条件进行判断
+    if sk == 'new':               # 最新上线
+        houses = house_query.order_by(House.create_time.desc())
+    elif sk == 'booking':         # 入住最多
+        houses = house_query.order_by(House.order_count.desc())
+    elif sk == 'price-inc':       # 价格 低-高
+        houses = house_query.order_by(House.price)
+    else:                         # 价格 高-低
+        houses = house_query.order_by(House.price.desc())
 
     # 3.对房屋分页,参数:1->第几页数据,2->每页几条数据,3->是否报404错误
     paginate = houses.paginate(int(p), constants.HOUSE_LIST_PAGE_CAPACITY, False)
