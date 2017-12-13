@@ -49,7 +49,7 @@ $(document).ready(function(){
         } else {
             var sd = new Date(startDate);
             var ed = new Date(endDate);
-            days = (ed - sd)/(1000*3600*24) + 1;
+            days = (ed - sd)/(1000*3600*24);
             var price = $(".house-text>p>span").html();
             var amount = days * parseFloat(price);
             $(".order-amount>span").html(amount.toFixed(2) + "(共"+ days +"晚)");
@@ -58,7 +58,7 @@ $(document).ready(function(){
     var queryData = decodeQuery();
     var houseId = queryData["hid"];
 
-    // TODO: 获取房屋的基本信息
+    // TOD: 获取房屋的基本信息
     $.get('/api/v1.0/house/' + houseId, function (resp) {
        if (resp.errno == '0'){
            // 图片,金额,总金额
@@ -68,5 +68,36 @@ $(document).ready(function(){
        }
     });
 
-    // TODO: 订单提交
-})
+    // TOD: 订单提交
+    $('.submit-btn').on('click', function () {
+        var start_day = $('#start-date').val();
+        var end_day = $('#end-date').val();
+        if (!(start_day && end_day)){
+            return '请输入时间信息'
+        }
+        var params = {
+            'start_day': start_day,
+            'end_day': end_day,
+            'house_id': houseId
+        };
+        $.ajax({
+            url: '/api/v1.0/order',
+            type: 'post',
+            data: JSON.stringify(params),
+            contentType: 'application/json',
+            headers: {
+                'X-CSRFToken': getCookie('csrf_token')
+            },
+            success: function (resp) {
+                if (resp.errno == '0'){
+                    // 下单成功
+                    location.href = '/orders.html'
+                }else if (resp.errno == '4101'){
+                    location.href = '/login.html'
+                }else {
+                    alert(resp.errmsg)
+                }
+            }
+        })
+    })
+});

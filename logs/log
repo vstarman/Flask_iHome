@@ -4516,3 +4516,62 @@ INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:48:35] "GET /static/images/ho
 INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:48:35] "GET /static/js/ihome/booking.js HTTP/1.1" 200 -
 INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:48:36] "GET /api/v1.0/session HTTP/1.1" 200 -
 INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:48:36] "GET /api/v1.0/house/3 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:51:56] "GET /order.html HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:52:05] "GET /orders.html HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:52:05] "GET /static/css/ihome/orders.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:52:05] "GET /static/js/ihome/orders.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:53:55] "GET /my.html HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:53:55] "GET /static/css/ihome/my.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:53:55] "GET /static/js/ihome/my.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:53:56] "GET /api/v1.0/user HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:53:57] "GET / HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:53:57] "GET /static/css/ihome/index.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:53:57] "GET /static/images/logo@128x59.png HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:53:58] "GET /static/js/ihome/index.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:53:58] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:53:58] "GET /api/v1.0/house/index HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:53:59] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:53:59] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:54:03] "GET /search.html?aid=&aname=&sd=&ed= HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:54:03] "GET /static/css/ihome/search.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:54:03] "GET /static/js/ihome/search.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:54:04] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:54:05] "GET /api/v1.0/houses?aid=&sd=&ed=&sk=new&p=1 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:54:13] "GET /detail.html?id=6 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:54:14] "GET /api/v1.0/house/6 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:54:14] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:54:20] "GET /api/v1.0/houses?aid=&sd=&ed=&sk=new&p=1 HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/__init__.py', reloading
+INFO _internal.py:87  * Restarting with stat
+INFO _internal.py:87  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:58:48] "GET /api/v1.0/house/index HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:58:48] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:58:49] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:58:49] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:58:52] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:58:52] "GET /api/v1.0/houses?aid=&sd=&ed=&sk=new&p=1 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:58:54] "GET /detail.html?id=5 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:58:55] "GET /api/v1.0/house/5 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:58:56] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:58:59] "GET /api/v1.0/houses?aid=&sd=&ed=&sk=new&p=1 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:59:06] "GET /api/v1.0/house/index HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:59:06] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:59:06] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:59:06] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:59:07] "GET /detail.html?id=1 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:59:10] "GET /api/v1.0/house/1 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:59:10] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:59:15] "GET /booking.html?hid=1 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:59:15] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [13/Dec/2017 16:59:16] "GET /api/v1.0/house/1 HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/order.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/order.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
