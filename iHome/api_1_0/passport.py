@@ -17,8 +17,9 @@ def check_login():
     """
     # 1.获取用户登录状态
     user_name = session.get('user_name', '')
+    user_id = session.get('user_id', '')
     # 2.返回用户名和id
-    return jsonify(errno=RET.OK, errmsg='OK', data={'user_name': user_name})
+    return jsonify(errno=RET.OK, errmsg='OK', data={'user_name': user_name, 'user_id': user_id})
 
 
 @api.route('/users', methods=['POST'])

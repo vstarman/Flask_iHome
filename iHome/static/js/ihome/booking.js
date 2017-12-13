@@ -25,7 +25,14 @@ function showErrorMsg() {
 }
 
 $(document).ready(function(){
-    // TODO: 判断用户是否登录
+    // TOD: 判断用户是否登录
+    $.get('/api/v1.0/session', function(resp){
+       if (resp.errno == '0'){
+            if (!(resp.data.user_name && resp.data.user_id)){
+                location.href = '/login.html'
+            }
+       }
+    });
 
     $(".input-daterange").datepicker({
         format: "yyyy-mm-dd",
@@ -52,6 +59,14 @@ $(document).ready(function(){
     var houseId = queryData["hid"];
 
     // TODO: 获取房屋的基本信息
+    $.get('/api/v1.0/house/' + houseId, function (resp) {
+       if (resp.errno == '0'){
+           // 图片,金额,总金额
+           $('.house-info>img').attr('src',resp.data.house.img_urls[0]);
+           $('.house-info>.house-text>h3').html(resp.data.house.title);
+           $('.house-info>.house-text>p>span').html(resp.data.house.price/100).toFixed(0);
+       }
+    });
 
     // TODO: 订单提交
 })
