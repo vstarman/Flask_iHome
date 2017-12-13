@@ -20,7 +20,7 @@ def get_houses_list():
     var params = {
         aid:areaId,
         sd:startDate,
-        end_day:endDate,
+        ed:endDate,
         sk:sortKey,
         p:next_page
     };
@@ -32,9 +32,9 @@ def get_houses_list():
     aid = get_arg('aid', '')
     # 入住和离开日期
     start_day = get_arg('sd', '')
-    end_day = get_arg('end_day', '')
+    end_day = get_arg('ed', '')
     # 排序方式
-    sk = get_arg('sk', '')
+    sk = get_arg('sk', 'new')
     # 第几页
     p = get_arg('p', '1')
 
@@ -61,7 +61,7 @@ def get_houses_list():
         h_key = 'house_list_%s_%s_%s_%s' % (aid, start_day, end_day, sk)
         data_dict = redis_store.hget(h_key, p)
         if data_dict:
-            return jsonify(errno=RET.OK, errmsg='OK', data=data_dict)
+            return jsonify(errno=RET.OK, errmsg='OK', data=eval(data_dict))
     except Exception as e:
         current_app.logger.error(e)
 
@@ -87,26 +87,29 @@ def get_houses_list():
         conflict_order = Order.query.filter(Order.end_date > start_day)
     elif end_day:                 # 筛选出我退房时,所有有人住的订单
         conflict_order = Order.query.filter(Order.begin_date < end_day)
-
-    # 5.2.取到不符合订单的房屋id,取反
-    house_ids = [i.id for i in conflict_order]
-    house_filter.append(Order.id.notin_(house_ids))
+    if conflict_order:
+        # 5.2.取到不符合订单的房屋id,取反
+        house_ids = [i.id for i in conflict_order]
+        house_filter.append(Order.id.notin_(house_ids))
 
     # 6.根据不同排序方式去查询(解包查询列表)
-    if sk == "booking":
-        house_query = house_query.filter(*house_filter).order_by(House.order_count.desc())
+    if sk == "new":
+        house_query = house_query.filter(*house_filter).order_by(House.create_time.desc())
     elif sk == "price-inc":
         house_query = house_query.filter(*house_filter).order_by(House.price)
     elif sk == "price-des":
         house_query = house_query.filter(*house_filter).order_by(House.price.desc())
     else:
-        house_query = house_query.filter(*house_filter).order_by(House.create_time.desc())
+        house_query = house_query.filter(*house_filter).order_by(House.order_count.desc())
 
-    # 7.对房屋分页,参数:1->第几页数据,2->每页几条数据,3->是否报404错误
-    paginate = house_query.paginate(p, constants.HOUSE_LIST_PAGE_CAPACITY, False)
-    # 7.1取出paginate所有对象
-    houses = paginate.items
-    total_page = len(houses)
+    if house_query:
+        # 7.对房屋分页,参数:1->第几页数据,2->每页几条数据,3->是否报404错误
+        paginate = house_query.paginate(p, constants.HOUSE_LIST_PAGE_CAPACITY, False)
+        # 7.1取出paginate所有对象
+        houses = paginate.items
+        total_page = len(houses)
+    else:
+        return jsonify(errno=RET.NODATA, errmsg='无房屋数据')
 
     # 7.2.将对象集转为字典的列表
     house_list = []
@@ -116,7 +119,7 @@ def get_houses_list():
     # 7.3 响应的字典
     data_dict = {'houses': house_list, 'total_page': total_page}
 
-    # 8.添加缓存:Todo????????
+    # 8.添加缓存:TODO ????????
     if p <= total_page:    # 当前页如果小于或等于总页数,再去存
         try:
             h_key = 'house_list_%s_%s_%s_%s' % (aid, start_day, end_day, sk)
@@ -125,7 +128,7 @@ def get_houses_list():
             # 开启事务
             pipe.multi()
             # 设置数据
-            pipe.hset(h_key, p, house_list)
+            pipe.hset(h_key, p, data_dict)
             # 指定key过期时间
             pipe.expire(h_key, constants.HOUSE_LIST_REDIS_EXPIRES)
             # 提交事务
@@ -141,13 +144,13 @@ def get_houses_list():
 def get_house_index():
     """主页房屋图片幻灯片显示
     以订单数量倒叙排序
-    # 1.rend_dayis中获取
+    # 1.redis中获取
     # 2.查询房屋数据
     # 3.数据缓存
     # 4.返回应答
     :return:
     """
-    # 1.rend_dayis中获取
+    # 1.redis中获取
     try:
         houses_list = redis_store.get('index_house_pic')
         if houses_list:
@@ -196,10 +199,10 @@ def house_detail(house_id):
         house_dict = redis_store.get('house_detail_%d' % house_id)
         # 如果用户未登录
         if house_dict:
-            return jsonify(errno=RET.OK, errmsg='OK', data={'house': house_dict, 'user_id': user_id})
+            return jsonify(errno=RET.OK, errmsg='OK', data={'house': eval(house_dict), 'user_id': user_id})
     except Exception as e:
         current_app.logger.error(e)
-        return jsonify(errno=RET.DBERR, errmsg='从rend_dayis中获取房屋详情缓存失败')
+        return jsonify(errno=RET.DBERR, errmsg='从redis中获取房屋详情缓存失败')
 
     # 1.是否是房东,房东则不显示预定按钮
     # 3.查询房屋数据返回
@@ -214,10 +217,9 @@ def house_detail(house_id):
 
     # 4.设置缓存
     try:
-        redis_store.set('house_detail_%d' % house_id, house_dict, constants.HOUSE_DETAIL_REDIS_EXPIRE_SECOND)
+        redis_store.set(('house_detail_%d' % house_id), house_dict, constants.HOUSE_DETAIL_REDIS_EXPIRE_SECOND)
     except Exception as e:
         current_app.logger.error(e)
-        return jsonify(errno=RET.DBERR, errmsg='缓存设置失败')
 
     return jsonify(errno=RET.OK, errmsg='OK', data={'house': house_dict, 'user_id': user_id})
 
@@ -295,7 +297,7 @@ def add_new_house():
         acreage:1
         unit:1
         capacity:1
-        bend_days:1
+        beds:1
         deposit:1
         min_days:1
         max_days:1
@@ -313,14 +315,14 @@ def add_new_house():
     acreage = get('acreage')
     unit = get('unit')
     capacity = get('capacity')
-    bend_days = get('bend_days')
+    beds = get('beds')
     deposit = get('deposit')
     min_days = get('min_days')
     max_days = get('max_days')
 
     # 2.校验参数
     if not all([title, price, address, area_id, room_count, acreage,
-                unit, capacity, bend_days, deposit, min_days, max_days]):
+                unit, capacity, beds, deposit, min_days, max_days]):
         return jsonify(errno=RET.PARAMERR, errmsg='参数缺失')
 
     # 2.1 将房租和押金16.99等数字转化为整形保存(数据库字段为整形)
@@ -342,7 +344,7 @@ def add_new_house():
     house.acreage = acreage
     house.unit = unit
     house.capacity = capacity
-    house.bend_days = bend_days
+    house.beds = beds
     house.deposit = deposit
     house.min_days = min_days
     house.max_days = max_days
@@ -369,11 +371,11 @@ def add_new_house():
 def get_areas():
     """new_house视图的城区信息获取
     1.获取数据库城区信息
-    2.将城区信息保存到rend_dayis中
+    2.将城区信息保存到redis中
     3.返回响应状态
     :return:
     """
-    # 0.先从rend_dayis中获取areas
+    # 0.先从redis中获取areas
     try:
         areas_list = redis_store.get('areas')
         if areas_list:
@@ -389,12 +391,12 @@ def get_areas():
     for i in areas:
         areas_list.append(i.to_dict())
 
-    # 2.将城区信息保存到rend_dayis中
+    # 2.将城区信息保存到redis中
     try:
         redis_store.set('areas', areas_list, constants.AREA_INFO_REDIS_EXPIRES)
     except Exception as e:
         current_app.logger.error(e)
-        return jsonify(errno=RET.DBERR, errmsg='rend_dayis存储城区信息失败')
+        return jsonify(errno=RET.DBERR, errmsg='redis存储城区信息失败')
 
     # 3.返回响应状态
     return jsonify(errno=RET.OK, errmsg='地区信息发送成功', data={'areas': areas_list})

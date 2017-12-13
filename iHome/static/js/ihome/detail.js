@@ -21,8 +21,8 @@ $(document).ready(function(){
     $.get('/api/v1.0/house/'+houseId, function (resp) {
         if (resp.errno == '0'){
             // 填充房屋里的图片数据
-            $('.swiper-container').html(template('house-detail-tmpl',
-                {'img_urls': resp.data.house.images, 'price': resp.data.house.price}));
+            $('.swiper-container').html(template('house-image-tmpl',
+                {'img_urls': resp.data.house.img_urls, 'price': resp.data.house.price}));
             // 填充房屋里的详情数据
             $('.detail-con').html(template('house-detail-tmpl', {'house': resp.data.house}));
             // 判断是否是房东
