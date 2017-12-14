@@ -209,13 +209,13 @@ class Order(BaseModel, db.Model):
     amount = db.Column(db.Integer, nullable=False)  # 订单的总金额
     status = db.Column(  # 订单的状态
         db.Enum(
-            "WAIT_ACCEPT",  # 待接单,
+            "WAIT_ACCEPT",   # 待接单,
             "WAIT_PAYMENT",  # 待支付
-            "PAID",  # 已支付
+            "PAID",          # 已支付
             "WAIT_COMMENT",  # 待评价
-            "COMPLETE",  # 已完成
-            "CANCELED",  # 已取消
-            "REJECTED"  # 已拒单
+            "COMPLETE",      # 已完成
+            "CANCELED",      # 已取消
+            "REJECTED"       # 已拒单
         ),
         default="WAIT_ACCEPT", index=True)
     comment = db.Column(db.Text)  # 订单的评论信息或者拒单原因

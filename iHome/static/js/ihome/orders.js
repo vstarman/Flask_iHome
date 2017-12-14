@@ -18,9 +18,14 @@ $(document).ready(function(){
     $('.modal').on('show.bs.modal', centerModals);      //当模态框出现的时候
     $(window).on('resize', centerModals);
 
-    // TODO: 查询房客订单
+    // TOD: 查询房客订单
+    $.get('/api/v1.0/user/orders', function (resp) {
+        if (resp.errno == '0'){
+            $('.orders-list').html(template('orders-list-tmpl', {'orders': resp.data.orders}))
+        }
+    });
 
-    // TODO: 查询成功之后需要设置评论的相关处理
+    // TOD: 查询成功之后需要设置评论的相关处理
     $(".order-comment").on("click", function(){
         var orderId = $(this).parents("li").attr("order-id");
         $(".modal-comment").attr("order-id", orderId);

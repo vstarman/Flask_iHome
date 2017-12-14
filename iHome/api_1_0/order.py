@@ -87,3 +87,27 @@ def add_order():
 
     # 7.返回结果
     return jsonify(errno=RET.OK, errmsg='OK')
+
+
+@api.route('/user/orders')
+@login_require
+def get_orders():
+    """用户:获取订单
+    1.获取用户id
+    2.查询订单数据
+    :return:
+    """
+    user_id = g.user_id
+    try:
+        orders = Order.query.filter(user_id == Order.user_id).all()
+        if not orders:
+            return jsonify(errno=RET.NODATA, errmsg='查询数据为空')
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg='查询数据失败')
+
+    order_list = []
+    for order in orders:
+        order_list.append(order.to_dict())
+
+    return jsonify(errno=RET.OK, errmsg='OK', data={'orders': order_list})
