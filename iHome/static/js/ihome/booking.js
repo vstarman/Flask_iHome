@@ -44,7 +44,7 @@ $(document).ready(function(){
         var startDate = $("#start-date").val();
         var endDate = $("#end-date").val();
 
-        if (startDate && endDate && startDate >= endDate) {
+        if (startDate && endDate && startDate > endDate) {
             showErrorMsg("日期有误，请重新选择!");
         } else {
             var sd = new Date(startDate);

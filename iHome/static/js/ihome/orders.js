@@ -19,7 +19,9 @@ $(document).ready(function(){
     $(window).on('resize', centerModals);
 
     // TOD: 查询房客订单
-    $.get('/api/v1.0/user/orders', function (resp) {
+    $.get('/api/v1.0/user/orders?role=custom', function (resp) {
+        // role = landlord 房东
+        // role = custom 房客
         if (resp.errno == '0'){
             $('.orders-list').html(template('orders-list-tmpl', {'orders': resp.data.orders}))
         }

@@ -17,8 +17,13 @@ function getCookie(name) {
 $(document).ready(function(){
     $('.modal').on('show.bs.modal', centerModals);      //当模态框出现的时候
     $(window).on('resize', centerModals);
-    // TODO: 查询房东的订单
-    // TODO: 查询成功之后需要设置接单和拒单的处理
+    // TOD: 查询房东的订单
+    $.get('/api/v1.0/user/orders?role=landlord', function (resp) {
+        if (resp.errno == '0'){
+            $('.orders-list').html(template('orders-list-tmpl', {'orders': resp.data.orders}))
+        }
+    });
+    // TOD: 查询成功之后需要设置接单和拒单的处理
     $(".order-accept").on("click", function(){
         var orderId = $(this).parents("li").attr("order-id");
         $(".modal-accept").attr("order-id", orderId);

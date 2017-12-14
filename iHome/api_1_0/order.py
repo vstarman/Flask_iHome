@@ -91,17 +91,41 @@ def add_order():
 
 @api.route('/user/orders')
 @login_require
-def get_orders():
+def get_user_orders():
     """用户:获取订单
-    1.获取用户id
-    2.查询订单数据
+    1.获取用户id, 用户role
+    2.校验参数
+    3.查询订单数据
+    role = custom : 房客
+        or landlord : 房东
     :return:
     """
     user_id = g.user_id
+    role = request.args.get('role')
+
+    if not role:
+        return jsonify(errno=RET.PARAMERR, errmsg='参数缺失')
+
+    if role not in ('custom', 'landlord'):
+        return jsonify(errno=RET.PARAMERR, errmsg='参数错误')
+
     try:
-        orders = Order.query.filter(user_id == Order.user_id).all()
-        if not orders:
-            return jsonify(errno=RET.NODATA, errmsg='查询数据为空')
+        if role == 'custom':    # 用户查询自己订单
+            orders = Order.query.filter(user_id == Order.user_id).all()
+            if not orders:
+                return jsonify(errno=RET.NODATA, errmsg='查询数据为空')
+
+        else:    # 房东查询房客订单
+            # 查询出所有自己的房屋
+            houses = House.query.filter(House.user_id == user_id).all()
+            if not houses:
+                return jsonify(errno=RET.NODATA, errmsg='该用户无房屋')
+            # 取出房屋id
+            house_ids = [house.id for house in houses]
+            # 筛选出是自己房屋id的订单
+            orders = Order.query.filter(Order.house_id.in_(house_ids)).all()
+            if not orders:
+                return jsonify(errno=RET.NODATA, errmsg='该房东暂无用户订单')
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg='查询数据失败')
