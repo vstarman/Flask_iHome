@@ -4575,3 +4575,82 @@ INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_p
 INFO _internal.py:87  * Restarting with stat
 WARNING _internal.py:87  * Debugger is active!
 INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/order.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87  * Detected change in '/home/python/.virtualenvs/Flask_py/lib/python2.7/lib-dynload/_ctypes.x86_64-linux-gnu.so', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/order.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/order.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:24] "GET /static/plugins/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:29] "GET /search.html?aid=&aname=&sd=&ed= HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:30] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:30] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:30] "GET /static/css/reset.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:30] "GET /static/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:30] "GET /static/css/ihome/main.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:30] "GET /static/css/ihome/search.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:30] "GET /static/js/jquery.min.js HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:30] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:30] "GET /static/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:30] "GET /static/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:30] "GET /static/js/template.js HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:30] "GET /static/js/ihome/search.js HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:30] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:35] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:35] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:35] "GET /api/v1.0/houses?aid=&sd=&ed=&sk=new&p=1 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:37] "GET /api/v1.0/houses?aid=&sd=&ed=&sk=new&p=2 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:44] "GET /api/v1.0/houses?aid=&sd=&ed=&sk=new&p=1 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:44] "GET /api/v1.0/houses?aid=&sd=&ed=&sk=new&p=2 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:49] "GET /detail.html?id=6 HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:49] "GET /static/plugins/swiper/css/swiper.min.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:49] "GET /static/css/ihome/detail.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:49] "GET /static/plugins/swiper/js/swiper.jquery.min.js HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:49] "GET /static/js/ihome/detail.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:50] "GET /api/v1.0/house/6 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:50] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:53] "GET /booking.html?hid=6 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:53] "GET /static/css/ihome/booking.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:53] "GET /static/images/home01.jpg HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:53] "GET /static/js/ihome/booking.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:53] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:54] "GET /api/v1.0/house/6 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:54] "GET /login.html HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:54] "GET /static/css/ihome/login.css HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:54] "GET /static/images/logo@128x59.png HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:54] "GET /static/js/ihome/login.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:57] "POST /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:57] "GET /index.html HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:58] "GET /static/css/ihome/index.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:58] "GET /static/js/ihome/index.js HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:58] "GET /api/v1.0/house/index HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:58] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:59] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:13:59] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:14:01] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:14:01] "GET /api/v1.0/houses?aid=&sd=&ed=&sk=new&p=1 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:14:03] "GET /api/v1.0/house/6 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:14:03] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:14:03] "GET /static/images/houseicon_sprite.png HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:14:10] "GET /api/v1.0/houses?aid=&sd=&ed=&sk=new&p=1 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:14:13] "GET /api/v1.0/houses?aid=1&sd=&ed=&sk=new&p=1 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:14:15] "GET /detail.html?id=3 HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:14:16] "GET /api/v1.0/house/3 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:14:16] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:14:18] "GET /booking.html?hid=3 HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:14:18] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:14:19] "GET /api/v1.0/house/3 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:14:27] "POST /api/v1.0/order HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:14:27] "GET /orders.html HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:14:27] "GET /static/css/ihome/orders.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [14/Dec/2017 17:14:27] "GET /static/js/ihome/orders.js HTTP/1.1" 304 -
