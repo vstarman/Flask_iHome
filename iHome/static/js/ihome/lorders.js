@@ -23,12 +23,33 @@ $(document).ready(function(){
             $('.orders-list').html(template('orders-list-tmpl', {'orders': resp.data.orders}))
         }
     });
-    // TOD: 查询成功之后需要设置接单和拒单的处理
+    // TODo: 查询成功之后需要设置接单和拒单的处理
     $(".order-accept").on("click", function(){
+        // 点击接单按钮
         var orderId = $(this).parents("li").attr("order-id");
         $(".modal-accept").attr("order-id", orderId);
+        $.ajax({
+            url: '/api/v1.0/order/' + orderId + '/status',
+            type: 'put',
+            contentType: 'application/json',
+            headers: {
+                'X-CSRFToken': getCookie('csrf_token')
+            },
+            success: function (resp) {
+                if (resp.errno == '0'){
+                    // 1.设置订单状态的html
+                    $('.orders-text>span').html('已接单');
+                    // 2.隐藏接单拒单按钮
+                    $('.order-operate').hide();
+                    // 隐藏弹出的框
+
+                }
+            }
+
+        })
     });
     $(".order-reject").on("click", function(){
+        // 拒单
         var orderId = $(this).parents("li").attr("order-id");
         $(".modal-reject").attr("order-id", orderId);
     });
