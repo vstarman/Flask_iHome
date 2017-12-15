@@ -12,6 +12,7 @@ from iHome.utils.common import login_require
 
 
 @api.route('/order', methods=['POST'])
+@login_require
 def add_order():
     """
     1.获取参数:入住时间,离开时间,房屋id
@@ -135,3 +136,43 @@ def get_user_orders():
         order_list.append(order.to_dict())
 
     return jsonify(errno=RET.OK, errmsg='OK', data={'orders': order_list})
+
+
+@api.route('/order/<int:order_id>/status', methods=['PUT'])
+@login_require
+def change_order_status(order_id):
+    """房东:接单拒单
+    1.取到订单号
+    2.获取对应的订单模型
+    3.校对订单的房东是否是登录用户
+    4.修改模型订单状态
+    5.返回
+    :param order_id: 订单id
+    :return:
+    """
+    # 1.取到订单号,用户id
+    user_id = g.user_id
+
+    # 2.获取对应的订单模型
+    try:
+        order = Order.query.filter(Order.id == order_id, Order.status == "WAIT_ACCEPT").first()
+        if not order:
+            return jsonify(errno=RET.NODATA, errmsg='无此订单')
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg='查询数据库错误')
+
+    # 3.校对订单的房东是否是登录用户
+    if user_id != order.house.user_id:
+        return jsonify(errno=RET.ROLEERR, errmsg='用户身份错误')
+
+    # 4.修改模型订单状态
+    try:
+        order.status = 'WAIT_COMMENT'
+        db.session.commit()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg='保存数据失败')
+
+    # 5.返回
+    return jsonify(errno=RET.OK, errmsg='OK')
