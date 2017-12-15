@@ -171,6 +171,7 @@ def change_order_status(order_id):
         order.status = 'WAIT_COMMENT'
         db.session.commit()
     except Exception as e:
+        db.session.rollback()
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg='保存数据失败')
 
