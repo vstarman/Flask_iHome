@@ -196,17 +196,36 @@ def change_order_status(order_id):
 @login_require
 def order_comment(order_id):
     """订单评论
-    1.取到用户id
+    1.获取评论
     2.获取对应的订单模型
     3.修改模型订单状态
     4.返回
     :param order_id:
     :return:
     """
-    # 1.取到用户id
-    user_id = g.user_id
+    # 1.获取评论
+    comment = request.json.get('comment')
+    if not comment:
+        return jsonify(errno=RET.PARAMERR, errmsg='请填写拒单理由')
 
     # 2.获取对应的订单模型
+    try:
+        order = Order.query.filter(Order.id == order_id, Order.status == "WAIT_COMMENT").first()
+        if not order:
+            return jsonify(errno=RET.NODATA, errmsg='无此订单')
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg='查询数据库错误')
+
     # 3.修改模型订单状态
-    # 4.返回
-    pass
+    order.comment = comment
+    order.status = 'COMPLETE'
+    try:
+        db.session.commit()
+    except Exception as e:
+        db.session.rollback()
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg='保存数据失败')
+
+    # 5.返回
+    return jsonify(errno=RET.OK, errmsg='OK')
