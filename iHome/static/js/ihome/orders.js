@@ -53,6 +53,9 @@ $(document).ready(function(){
                 })
             })
         }
+        else if (resp.errno == '4101'){
+            location.href = '/login.html'
+        }
     });
 
 });

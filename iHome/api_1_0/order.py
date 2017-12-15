@@ -4,10 +4,8 @@ import datetime
 from . import api
 from flask import current_app, jsonify, request, g, session
 from iHome.utils.response_code import RET
-from iHome.utils.storage_image import storage_image
-from iHome.models import Area, House, Facility, HouseImage, Order
+from iHome.models import House, Order
 from iHome import db, redis_store
-from iHome import constants
 from iHome.utils.common import login_require
 
 
@@ -112,7 +110,7 @@ def get_user_orders():
 
     try:
         if role == 'custom':    # 用户查询自己订单
-            orders = Order.query.filter(user_id == Order.user_id).all()
+            orders = Order.query.filter(user_id == Order.user_id).order_by(Order.create_time.desc()).all()
             if not orders:
                 return jsonify(errno=RET.NODATA, errmsg='查询数据为空')
 
@@ -124,7 +122,7 @@ def get_user_orders():
             # 取出房屋id
             house_ids = [house.id for house in houses]
             # 筛选出是自己房屋id的订单
-            orders = Order.query.filter(Order.house_id.in_(house_ids)).all()
+            orders = Order.query.filter(Order.house_id.in_(house_ids)).order_by(Order.create_time.desc()).all()
             if not orders:
                 return jsonify(errno=RET.NODATA, errmsg='该房东暂无用户订单')
     except Exception as e:

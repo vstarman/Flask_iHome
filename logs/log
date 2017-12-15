@@ -5695,3 +5695,55 @@ INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:00:00] "GET /api/v1.0/user HT
 INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:00:02] "GET /api/v1.0/user/orders?role=landlord HTTP/1.1" 200 -
 INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:00:05] "GET /api/v1.0/user HTTP/1.1" 200 -
 INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:00:08] "GET /api/v1.0/user/orders?role=custom HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/order.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:05:37] "GET /api/v1.0/user HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:05:38] "GET / HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:05:38] "GET /api/v1.0/house/index HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:05:38] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:05:39] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:05:39] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:05:40] "GET /search.html?aid=&aname=&sd=&ed= HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:05:40] "GET /static/css/ihome/search.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:05:40] "GET /static/js/ihome/search.js HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:05:41] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:05:42] "GET /api/v1.0/houses?aid=&sd=&ed=&sk=new&p=1 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:05:43] "GET /detail.html?id=6 HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:05:43] "GET /static/css/ihome/detail.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:05:43] "GET /static/js/ihome/detail.js HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:05:44] "GET /api/v1.0/house/6 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:05:44] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:05:44] "GET /static/images/houseicon_sprite.png HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:06:16] "GET /api/v1.0/houses?aid=&sd=&ed=&sk=new&p=1 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:06:19] "GET /api/v1.0/house/6 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:06:19] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:06:20] "GET /booking.html?hid=6 HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:06:21] "GET /static/css/ihome/booking.css HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:06:21] "GET /static/images/home01.jpg HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:06:21] "GET /static/js/ihome/booking.js HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:06:21] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:06:22] "GET /api/v1.0/house/6 HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:06:33] "POST /api/v1.0/order HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:06:33] "GET /api/v1.0/user/orders?role=custom HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/order.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:08:45] "GET /orders.html HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:08:47] "GET /api/v1.0/user/orders?role=custom HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/order.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:09:56] "GET /orders.html HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:09:57] "GET /api/v1.0/user/orders?role=custom HTTP/1.1" 200 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:10:11] "GET /orders.html HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:10:11] "GET /api/v1.0/user/orders?role=custom HTTP/1.1" 200 -
+INFO _internal.py:87  * Detected change in '/home/python/Desktop/flask_pro/ECS_pro/Flask_iHome/iHome/api_1_0/order.py', reloading
+INFO _internal.py:87  * Restarting with stat
+WARNING _internal.py:87  * Debugger is active!
+INFO _internal.py:87  * Debugger PIN: 708-368-659
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:11:08] "GET /orders.html HTTP/1.1" 304 -
+INFO _internal.py:87 127.0.0.1 - - [15/Dec/2017 12:11:09] "GET /api/v1.0/user/orders?role=custom HTTP/1.1" 200 -
