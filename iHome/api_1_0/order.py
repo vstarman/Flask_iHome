@@ -142,7 +142,7 @@ def get_user_orders():
 @login_require
 def change_order_status(order_id):
     """房东:接单拒单
-    1.取到订单号
+    1.取到用户id,是接单还是拒单事件
     2.获取对应的订单模型
     3.校对订单的房东是否是登录用户
     4.修改模型订单状态
@@ -150,8 +150,13 @@ def change_order_status(order_id):
     :param order_id: 订单id
     :return:
     """
-    # 1.取到订单号,用户id
+    # 1.取到用户id,是接单还是拒单事件
     user_id = g.user_id
+    action = request.json.get('action')
+
+    # 参数校验:
+    if not action or action not in ('accept', 'reject'):
+        return jsonify(errno=RET.PARAMERR, errmsg='参数错误')
 
     # 2.获取对应的订单模型
     try:
@@ -167,8 +172,16 @@ def change_order_status(order_id):
         return jsonify(errno=RET.ROLEERR, errmsg='用户身份错误')
 
     # 4.修改模型订单状态
-    try:
+    if action == 'accept':
         order.status = 'WAIT_COMMENT'
+    elif action == 'reject':
+        order.status = 'REJECTED'
+        # 获取拒单原因
+        reason = request.json.get('reason')
+        if not reason:
+            return jsonify(errno=RET.PARAMERR, errmsg='请填写拒单理由')
+        order.comment = reason
+    try:
         db.session.commit()
     except Exception as e:
         db.session.rollback()

@@ -75,9 +75,10 @@ $(document).ready(function(){
                 var orderId = $(this).attr("order-id");
                 // 接单
                 $.ajax({
-                    url: "/api/v1.0/order/" + orderId + "/status",
+                    url: "/api/v1.0/order/" + orderId + "/status?name='xxxx'",
                     type: "put",
                     contentType: "application/json",
+                    data: JSON.stringify({'action': 'accept'}),
                     headers: {
                         "X-CSRFToken": getCookie("csrf_token")
                     },
@@ -97,6 +98,34 @@ $(document).ready(function(){
                 var orderId = $(this).parents("li").attr("order-id");
                 $(".modal-reject").attr("order-id", orderId);
             });
+            $(".modal-reject").on("click", function () {
+                var orderId = $(this).attr("order-id");
+                var reason = $("#reject-reason").val();
+                if (!reason) {
+                    alert("请填写拒单原因");
+                    return
+                }
+                // 接单
+                $.ajax({
+                    url: "/api/v1.0/order/" + orderId + "/status",
+                    type: "put",
+                    data: JSON.stringify({"action": "reject", "reason": reason}),
+                    contentType: "application/json",
+                    headers: {
+                        "X-CSRFToken": getCookie("csrf_token")
+                    },
+                    success: function (resp) {
+                        if (resp.errno == "0") {
+                            // 1. 设置订单状态的html
+                            $(".orders-list>li[order-id=" + orderId + "]>div.order-content>div.order-text>ul li:eq(4)>span").html("已拒单");
+                            // 2. 隐藏接单和拒单操作
+                            $("ul.orders-list>li[order-id=" + orderId + "]>div.order-title>div.order-operate").hide();
+                            // 3. 隐藏弹出的框
+                            $("#reject-modal").modal("hide");
+                        }
+                    }
+                })
+            })
         }
     })
 });
