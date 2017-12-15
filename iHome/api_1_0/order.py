@@ -190,3 +190,23 @@ def change_order_status(order_id):
 
     # 5.返回
     return jsonify(errno=RET.OK, errmsg='OK')
+
+
+@api.route('/order/<int:order_id>/comment', methods=['PUT'])
+@login_require
+def order_comment(order_id):
+    """订单评论
+    1.取到用户id
+    2.获取对应的订单模型
+    3.修改模型订单状态
+    4.返回
+    :param order_id:
+    :return:
+    """
+    # 1.取到用户id
+    user_id = g.user_id
+
+    # 2.获取对应的订单模型
+    # 3.修改模型订单状态
+    # 4.返回
+    pass
